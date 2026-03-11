@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import AppCard from "../../components/AppCard.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -13,20 +16,96 @@ export async function getStaticPaths() {
 
 const { app } = Astro.props;
 const { Content } = await render(app);
+
+const allApps = await getCollection("apps");
+const relatedApps = allApps.filter((entry) =>
+  app.data.relatedApps?.includes(entry.data.slug)
+);
 ---
 
 <BaseLayout title={`${app.data.title} | Innosocia`} description={app.data.summary}>
-  <div class="wrapper">
-    <p style="color:#2f5d50; font-weight:600;">App</p>
-    <h1>{app.data.title}</h1>
-    <p>{app.data.tagline}</p>
+  <Header />
 
-    <p style="color:#5d675f;">
-      Status: {app.data.status} · Updated: {app.data.updatedAt}
-    </p>
+  <section class="hero">
+    <div class="wrapper">
+      <p class="eyebrow">App</p>
+      <h1>{app.data.title}</h1>
+      <p>{app.data.tagline}</p>
 
-    <hr />
+      <div class="meta" style="margin-top: 1rem;">
+        <span>Status: {app.data.status}</span>
+        <span>Opdateret: {app.data.updatedAt}</span>
+      </div>
 
-    <Content />
-  </div>
+      <p class="muted" style="margin-top: 1rem;">{app.data.summary}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="reading">
+      <h2>Hvorfor den findes</h2>
+      <p>{app.data.why}</p>
+    </div>
+  </section>
+
+  {app.data.solves?.length > 0 && (
+    <section class="section">
+      <div class="reading">
+        <h2>Hvad den prøver at løse</h2>
+        <ul>
+          {app.data.solves.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="reading">
+      <h2>Nuværende status</h2>
+      <p>
+        <strong>{app.data.status}</strong> · Senest opdateret {app.data.updatedAt}.
+      </p>
+      <p class="muted">
+        Statusfeltet bruges til at vise hvor langt appen er i sin udvikling, fra idé
+        til prototype til mere stabilt værktøj.
+      </p>
+    </div>
+  </section>
+
+  {app.data.techDirection?.length > 0 && (
+    <section class="section">
+      <div class="reading">
+        <h2>Teknologisk retning</h2>
+        <ul>
+          {app.data.techDirection.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="reading">
+      <h2>Uddybning</h2>
+      <Content />
+    </div>
+  </section>
+
+  {relatedApps.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Relaterede apps</h2>
+          <p class="muted">
+            Andre værktøjer i Sovereign-økosystemet med beslægtet retning.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          {relatedApps.map((entry) => <AppCard app={entry} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer />
 </BaseLayout>

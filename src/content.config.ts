@@ -11,6 +11,11 @@ const apps = defineCollection({
     status: z.enum(["idea", "prototype", "active", "stable"]),
     updatedAt: z.string(),
     featured: z.boolean().optional().default(false),
+
+    why: z.string(),
+    solves: z.array(z.string()).default([]),
+    techDirection: z.array(z.string()).default([]),
+    relatedApps: z.array(z.string()).default([]),
   }),
 });
 

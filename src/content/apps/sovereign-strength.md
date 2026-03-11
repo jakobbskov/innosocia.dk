@@ -6,6 +6,23 @@ summary: "En træningsapp med local-first data, enkel logik og fokus på reel ud
 status: "prototype"
 updatedAt: "2026-03-11"
 featured: true
+
+why: "Sovereign Strength findes fordi mange træningsapps enten er overfladiske eller overfyldte med abonnementer, støj og halvforklarede progressioner. Målet er et værktøj med reel struktur."
+
+solves:
+  - "Manglende sammenhæng i træningshistorik"
+  - "Uklare progressioner og beslutninger"
+  - "Afhængighed af generiske fitnessplatforme"
+
+techDirection:
+  - "Local-first træningshistorik"
+  - "Forklarbar progression"
+  - "Enkel logik frem for skjulte algoritmer"
+  - "Fokus på varig brugbarhed"
+
+relatedApps:
+  - "sovereign-finance"
+  - "sovereign-planta"
 ---
 
 Sovereign Strength samler træning, progression og refleksion i et enkelt system.
