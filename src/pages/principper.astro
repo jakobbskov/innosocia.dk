@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Principper | Innosocia"
+  description="De principper der styrer udviklingen af apps, idéer og projekter i Innosocia."
+>
+  <Header />
+
+  <section class="hero">
+    <div class="wrapper">
+      <p class="eyebrow">Principper</p>
+      <h1>Fem principper for roligere og mere robuste digitale systemer</h1>
+
+      <p class="muted" style="max-width:60ch;">
+        Innosocia bygger ikke bare software. Det bygger software efter nogle
+        ret enkle, men ofte oversete principper.
+      </p>
+
+      <p class="muted" style="max-width:60ch;">
+        De er ikke revolutionerende. De er bare konsekvente.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="reading">
+
+      <h2>1. Local-first</h2>
+
+      <p>
+        Data og funktionalitet bør så vidt muligt ligge tæt på brugeren.
+      </p>
+
+      <p>
+        Software bør kunne fungere uden konstant netforbindelse, uden
+        centraliserede platforme og uden at gøre brugeren afhængig af
+        eksterne tjenester for basale funktioner.
+      </p>
+
+      <p>
+        Local-first betyder ikke “ingen netværk”. Det betyder, at systemer
+        først og fremmest fungerer lokalt og derefter kan synkronisere,
+        dele eller samarbejde.
+      </p>
+
+      <hr />
+
+      <h2>2. Forklarbar logik</h2>
+
+      <p>
+        Brugere bør kunne forstå de systemer, de arbejder med.
+      </p>
+
+      <p>
+        Beslutningslogik, progression, beregninger og struktur bør være
+        læsbare og begrundelige – ikke skjulte i uigennemsigtige algoritmer
+        eller marketingvenlige “AI-features”.
+      </p>
+
+      <p>
+        Hvis et system påvirker menneskers beslutninger, bør det også
+        kunne forklares.
+      </p>
+
+      <hr />
+
+      <h2>3. Rolig teknologi</h2>
+
+      <p>
+        Software bør støtte menneskers opmærksomhed – ikke kapre den.
+      </p>
+
+      <p>
+        Mange digitale produkter er designet til at maksimere engagement,
+        notifikationer og tidsforbrug. Det skaber støj og fragmenteret
+        opmærksomhed.
+      </p>
+
+      <p>
+        Rolig teknologi forsøger det modsatte: værktøjer der hjælper
+        mennesker med at gøre det, de kom for, og derefter forsvinder igen.
+      </p>
+
+      <hr />
+
+      <h2>4. Få afhængigheder</h2>
+
+      <p>
+        Jo flere platforme, tjenester og biblioteker et system afhænger af,
+        desto mere skrøbeligt bliver det.
+      </p>
+
+      <p>
+        Innosocia forsøger at bygge systemer med så få eksterne afhængigheder
+        som muligt: simple arkitekturer, læsbar kode og værktøjer der kan
+        vedligeholdes over lang tid.
+      </p>
+
+      <p>
+        Robusthed kommer ofte fra enkelhed.
+      </p>
+
+      <hr />
+
+      <h2>5. Respekt for brugeren</h2>
+
+      <p>
+        Brugere er ikke dataproducenter eller engagement-mål.
+      </p>
+
+      <p>
+        Software bør respektere menneskers tid, opmærksomhed og ejerskab
+        over deres egne data.
+      </p>
+
+      <p>
+        Det betyder blandt andet færre manipulative designmønstre,
+        tydeligere systemer og værktøjer der hjælper mennesker med
+        at tænke og handle – ikke bare klikke.
+      </p>
+
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
