@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 
@@ -15,7 +13,6 @@ const otherProjects = projekter.filter((project) => project.data.status !== "act
   title="Projekter | Innosocia"
   description="Projekter, prototyper og udviklingsspor i og omkring Innosocia."
 >
-  <Header />
 
   <section class="hero">
     <div class="wrapper">
@@ -67,5 +64,4 @@ const otherProjects = projekter.filter((project) => project.data.status !== "act
     </section>
   )}
 
-  <Footer />
 </BaseLayout>

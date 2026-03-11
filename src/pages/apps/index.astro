@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
 import AppCard from "../../components/AppCard.astro";
 import { getCollection } from "astro:content";
 
@@ -19,7 +17,7 @@ const ideaApps = apps.filter((app) => app.data.status === "idea");
   title="Apps | Innosocia"
   description="Sovereign-apps og værktøjer med fokus på local-first software, autonomi og forståelig logik."
 >
-  <Header />
+
 
   <section class="hero">
     <div class="wrapper">
@@ -127,5 +125,4 @@ const ideaApps = apps.filter((app) => app.data.status === "idea");
     </section>
   )}
 
-  <Footer />
 </BaseLayout>

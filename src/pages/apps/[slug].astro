@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
 import AppCard from "../../components/AppCard.astro";
 import { getCollection, render } from "astro:content";
 
@@ -24,7 +22,6 @@ const relatedApps = allApps.filter((entry) =>
 ---
 
 <BaseLayout title={`${app.data.title} | Innosocia`} description={app.data.summary}>
-  <Header />
 
   <section class="hero">
     <div class="wrapper">
@@ -107,5 +104,4 @@ const relatedApps = allApps.filter((entry) =>
     </section>
   )}
 
-  <Footer />
 </BaseLayout>

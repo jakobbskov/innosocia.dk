@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection, render } from "astro:content";
 
@@ -24,7 +22,6 @@ const relatedIdeer = allIdeer.filter((entry) =>
 ---
 
 <BaseLayout title={`${post.data.title} | Innosocia`} description={post.data.description}>
-  <Header />
 
   <section class="hero">
     <div class="wrapper">
@@ -70,5 +67,4 @@ const relatedIdeer = allIdeer.filter((entry) =>
     </section>
   )}
 
-  <Footer />
 </BaseLayout>

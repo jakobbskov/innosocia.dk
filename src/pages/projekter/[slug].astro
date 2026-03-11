@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import { getCollection, render } from "astro:content";
 
@@ -24,7 +22,6 @@ const relatedProjects = allProjects.filter((entry) =>
 ---
 
 <BaseLayout title={`${project.data.title} | Innosocia`} description={project.data.summary}>
-  <Header />
 
   <section class="hero">
     <div class="wrapper">
@@ -81,5 +78,4 @@ const relatedProjects = allProjects.filter((entry) =>
     </section>
   )}
 
-  <Footer />
 </BaseLayout>
