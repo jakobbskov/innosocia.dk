@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { getCollection } from "astro:content";
+
+const ideer = await getCollection("ideer");
+
+const featuredIdeer = ideer.filter((post) => post.data.featured);
+const otherIdeer = ideer.filter((post) => !post.data.featured);
+---
+
+<BaseLayout
+  title="Idéer | Innosocia"
+  description="Essays, noter og refleksioner om digital suverænitet, local-first software og rolig teknologi."
+>
+  <Header />
+
+  <section class="hero">
+    <div class="wrapper">
+      <p class="eyebrow">Idéer</p>
+      <h1>Tekster om digital suverænitet og rolig teknologi</h1>
+      <p class="muted">
+        Her samles essays, noter og refleksioner om local-first software,
+        forklarbarhed, platformafhængighed og mere holdbare digitale systemer.
+      </p>
+      <p class="muted">
+        Målet er ikke at producere mere indholdsstøj, men at skrive ting der er
+        værd at vende tilbage til.
+      </p>
+    </div>
+  </section>
+
+  {featuredIdeer.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Fremhævede idéer</h2>
+          <p class="muted">
+            Centrale tekster og indgange til den overordnede retning.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          {featuredIdeer.map((post) => <ArticleCard post={post} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {otherIdeer.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Flere tekster</h2>
+          <p class="muted">
+            Yderligere essays, noter og udviklingsspor.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          {otherIdeer.map((post) => <ArticleCard post={post} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer />
+</BaseLayout>

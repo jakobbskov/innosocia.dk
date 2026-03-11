@@ -3,11 +3,16 @@ const { post } = Astro.props;
 ---
 
 <article class="card">
+  <p class="eyebrow">Idé</p>
+
   <h3>
     <a href={`/ideer/${post.data.slug}/`}>{post.data.title}</a>
   </h3>
+
   <p class="muted">{post.data.description}</p>
+
   <div class="meta">
     <span>{post.data.date}</span>
+    {post.data.tags?.map((tag) => <span>{tag}</span>)}
   </div>
 </article>

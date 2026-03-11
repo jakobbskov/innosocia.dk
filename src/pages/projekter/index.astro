@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projekter = await getCollection("projekter");
+
+const activeProjects = projekter.filter((project) => project.data.status === "active");
+const otherProjects = projekter.filter((project) => project.data.status !== "active");
+---
+
+<BaseLayout
+  title="Projekter | Innosocia"
+  description="Projekter, prototyper og udviklingsspor i og omkring Innosocia."
+>
+  <Header />
+
+  <section class="hero">
+    <div class="wrapper">
+      <p class="eyebrow">Projekter</p>
+      <h1>Praktiske spor, prototyper og systemer under opbygning</h1>
+      <p class="muted">
+        Projekter-siden samler de mere konkrete udviklingsspor: websites,
+        app-familier, prototyper og andre forsøg på at bygge noget mere læsbart
+        og mindre platformafhængigt.
+      </p>
+      <p class="muted">
+        Nogle projekter er aktive. Andre er på idé- eller forsøgsstadiet. Det er
+        meningen.
+      </p>
+    </div>
+  </section>
+
+  {activeProjects.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Aktive projekter</h2>
+          <p class="muted">
+            Spor der aktuelt arbejdes på og udvikles videre.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          {activeProjects.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {otherProjects.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Andre projekter</h2>
+          <p class="muted">
+            Yderligere prototyper, eksperimenter eller tidligere spor.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          {otherProjects.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer />
+</BaseLayout>
