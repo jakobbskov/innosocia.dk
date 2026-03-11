@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const apps = await getCollection("apps");
+
+  return apps.map((app) => ({
+    params: { slug: app.data.slug },
+    props: { app },
+  }));
+}
+
+const { app } = Astro.props;
+const { Content } = await render(app);
+---
+
+<BaseLayout title={`${app.data.title} | Innosocia`} description={app.data.summary}>
+  <div class="wrapper">
+    <p style="color:#2f5d50; font-weight:600;">App</p>
+    <h1>{app.data.title}</h1>
+    <p>{app.data.tagline}</p>
+
+    <p style="color:#5d675f;">
+      Status: {app.data.status} · Updated: {app.data.updatedAt}
+    </p>
+
+    <hr />
+
+    <Content />
+  </div>
+</BaseLayout>

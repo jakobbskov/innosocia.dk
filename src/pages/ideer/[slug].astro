@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const ideer = await getCollection("ideer");
+
+  return ideer.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} | Innosocia`} description={post.data.description}>
+  <div class="wrapper">
+    <p style="color:#2f5d50; font-weight:600;">Idé</p>
+    <h1>{post.data.title}</h1>
+
+    <p style="color:#5d675f;">
+      {post.data.date}
+    </p>
+
+    <hr />
+
+    <Content />
+  </div>
+</BaseLayout>
