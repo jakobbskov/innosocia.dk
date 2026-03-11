@@ -5,6 +5,11 @@ date: "2026-03-11"
 description: "Hvorfor lokal data og simple systemer ofte er mere moderne end endnu en cloud-afhængighed."
 tags: ["local-first", "software"]
 featured: true
+
+why: "Denne tekst findes for at udfordre forestillingen om, at cloud-afhængighed automatisk er mere moderne end lokal og mere robust software."
+
+relatedIdeer:
+  - "hvorfor-digital-suveraenitet-betyder-noget"
 ---
 
 Det lokale er ikke gammeldags. Det er ofte bare mindre skrøbeligt.

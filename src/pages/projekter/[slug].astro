@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -13,19 +16,70 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
+
+const allProjects = await getCollection("projekter");
+const relatedProjects = allProjects.filter((entry) =>
+  project.data.relatedProjects?.includes(entry.data.slug)
+);
 ---
 
 <BaseLayout title={`${project.data.title} | Innosocia`} description={project.data.summary}>
-  <div class="wrapper">
-    <p style="color:#2f5d50; font-weight:600;">Projekt</p>
-    <h1>{project.data.title}</h1>
+  <Header />
 
-    <p style="color:#5d675f;">
-      {project.data.date} · {project.data.status}
-    </p>
+  <section class="hero">
+    <div class="wrapper">
+      <p class="eyebrow">Projekt</p>
+      <h1>{project.data.title}</h1>
+      <p class="muted">{project.data.summary}</p>
 
-    <hr />
+      <div class="meta" style="margin-top: 1rem;">
+        <span>{project.data.date}</span>
+        <span>Status: {project.data.status}</span>
+      </div>
+    </div>
+  </section>
 
-    <Content />
-  </div>
+  <section class="section">
+    <div class="reading">
+      <h2>Hvorfor projektet findes</h2>
+      <p>{project.data.why}</p>
+    </div>
+  </section>
+
+  {project.data.direction?.length > 0 && (
+    <section class="section">
+      <div class="reading">
+        <h2>Retning</h2>
+        <ul>
+          {project.data.direction.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="reading">
+      <h2>Uddybning</h2>
+      <Content />
+    </div>
+  </section>
+
+  {relatedProjects.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Relaterede projekter</h2>
+          <p class="muted">
+            Andre projekter i samme udviklingsspor eller økosystem.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          {relatedProjects.map((entry) => <ProjectCard project={entry} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer />
 </BaseLayout>

@@ -5,6 +5,17 @@ date: "2026-03-11"
 status: "active"
 summary: "En voksende familie af local-first apps til økonomi, træning, plantepleje og videre refleksion."
 featured: true
+
+why: "Projektet findes for at samle flere beslægtede værktøjer i et fælles økosystem med fokus på digital suverænitet, forståelig logik og lokal kontrol."
+
+direction:
+  - "Fælles designretning"
+  - "Local-first software"
+  - "Forklarbar logik"
+  - "Lav platformafhængighed"
+
+relatedProjects:
+  - "innosocia-dk"
 ---
 
 Sovereign Suite er den samlede betegnelse for en række apps med fælles retning.

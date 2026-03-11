@@ -5,6 +5,11 @@ date: "2026-03-11"
 description: "Hvorfor afhængighed af platforme ikke bare er et teknisk valg, men et spørgsmål om handlekraft."
 tags: ["digital suverænitet", "local-first"]
 featured: true
+
+why: "Denne tekst findes for at forklare, hvorfor digital suverænitet ikke kun er en teknisk præference, men et spørgsmål om robusthed, kontrol og praktisk handlekraft."
+
+relatedIdeer:
+  - "lokal-first-er-ikke-nostalgi"
 ---
 
 Digital suverænitet handler ikke kun om teknik.

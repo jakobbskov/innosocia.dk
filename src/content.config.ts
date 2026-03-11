@@ -28,6 +28,9 @@ const ideer = defineCollection({
     description: z.string(),
     tags: z.array(z.string()).default([]),
     featured: z.boolean().optional().default(false),
+
+    why: z.string(),
+    relatedIdeer: z.array(z.string()).default([]),
   }),
 });
 
@@ -40,6 +43,10 @@ const projekter = defineCollection({
     status: z.enum(["idea", "active", "paused", "complete"]),
     summary: z.string(),
     featured: z.boolean().optional().default(false),
+
+    why: z.string(),
+    direction: z.array(z.string()).default([]),
+    relatedProjects: z.array(z.string()).default([]),
   }),
 });
 
