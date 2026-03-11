@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import AppCard from "../../components/AppCard.astro";
+import { getCollection } from "astro:content";
+
+const apps = await getCollection("apps");
+
+const activeApps = apps.filter((app) =>
+  app.data.status === "active" || app.data.status === "stable"
+);
+
+const prototypeApps = apps.filter((app) => app.data.status === "prototype");
+const ideaApps = apps.filter((app) => app.data.status === "idea");
+---
+
+<BaseLayout
+  title="Apps | Innosocia"
+  description="Sovereign-apps og værktøjer med fokus på local-first software, autonomi og forståelig logik."
+>
+  <Header />
+
+  <section class="hero">
+    <div class="wrapper">
+      <p class="eyebrow">Apps</p>
+      <h1>Sovereign-apps og værktøjer med rygrad</h1>
+      <p class="muted">
+        Apps-siden samler værktøjer udviklet med fokus på local-first software,
+        forståelig logik, lav platformafhængighed og mere rolig teknologi.
+      </p>
+      <p class="muted">
+        De findes ikke for at fylde endnu et dashboard med funktioner, men for at
+        støtte reel praksis: økonomisk overblik, træning, plantepleje og andre
+        områder hvor mennesker har brug for systemer, der hjælper uden at overtage.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Hvorfor disse apps findes</h2>
+        <p class="muted">
+          Mange digitale værktøjer er bygget til abonnement, fastholdelse og
+          platformlogik. Sovereign-apps er et forsøg på noget andet: mere lokale
+          data, mindre støj, mere forklarbarhed og større kontrol for brugeren.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Local-first</h3>
+          <p class="muted">
+            Data og funktionalitet så tæt på brugeren som muligt.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Forklarbar logik</h3>
+          <p class="muted">
+            Systemer skal kunne forstås og begrundes, ikke bare bruges.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Rolig teknologi</h3>
+          <p class="muted">
+            Mindre kognitiv støj. Mere fokus på det, man faktisk prøver at gøre.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {activeApps.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Aktive og stabile apps</h2>
+          <p class="muted">
+            Værktøjer der er længst fremme og kan fungere som tydelige eksempler på
+            retningen.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          {activeApps.map((app) => <AppCard app={app} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {prototypeApps.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Prototyper</h2>
+          <p class="muted">
+            Apps under udvikling, hvor struktur og retning er på plads, men hvor
+            funktionalitet og form stadig modnes.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          {prototypeApps.map((app) => <AppCard app={app} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {ideaApps.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Idéspor</h2>
+          <p class="muted">
+            Mulige kommende apps eller koncepter, som endnu ikke er blevet til fulde
+            prototyper.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          {ideaApps.map((app) => <AppCard app={app} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer />
+</BaseLayout>
