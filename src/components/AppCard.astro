@@ -1,0 +1,11 @@
+---
+const { app } = Astro.props;
+---
+
+<article class="card">
+  <h3>
+    <a href={`/apps/${app.data.slug}/`}>{app.data.title}</a>
+  </h3>
+  <p>{app.data.tagline}</p>
+  <p class="muted">{app.data.summary}</p>
+</article>

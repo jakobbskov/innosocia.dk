@@ -1,11 +1,89 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+import AppCard from "../components/AppCard.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const apps = await getCollection("apps");
+const ideer = await getCollection("ideer");
+const projekter = await getCollection("projekter");
+
+const featuredApps = apps.filter((a) => a.data.featured);
+const featuredIdeer = ideer.filter((i) => i.data.featured);
+const featuredProjekter = projekter.filter((p) => p.data.featured);
 ---
 
-<BaseLayout title="Innosocia">
-  <div class="wrapper">
-    <h1>Innosocia</h1>
-    <p>Digital sovereignty, local-first tools and the Sovereign app ecosystem.</p>
-    <p>This site collects apps, ideas and projects around calm technology and digital independence.</p>
-  </div>
+<BaseLayout
+  title="Innosocia"
+  description="Digitale værktøjer med rygrad. Local-first software, idéer og projekter om digital suverænitet."
+>
+  <section class="hero">
+    <div class="wrapper">
+      <p class="eyebrow">Digital sovereignty</p>
+      <h1>Digitale værktøjer med rygrad</h1>
+      <p class="muted">
+        Innosocia er et digitalt hjem for apps, idéer og projekter om local-first
+        software, forklarbarhed og mere rolig teknologi.
+      </p>
+      <p class="muted">
+        Mindre platformafhængighed. Mere kontrol. Mere læsbarhed. Færre digitale
+        systemer, der opfører sig som om de ejer dit liv.
+      </p>
+
+      <div class="button-row">
+        <a class="button primary" href="/apps/">Se apps</a>
+        <a class="button" href="/ideer/">Læs idéer</a>
+        <a class="button" href="/projekter/">Se projekter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Apps</h2>
+        <p class="muted">
+          Sovereign-apps bygget med fokus på autonomi, lokal data og forståelig logik.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        {featuredApps.map((app) => <AppCard app={app} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Idéer</h2>
+        <p class="muted">
+          Essays og refleksioner om digital suverænitet, local-first software og
+          rolige systemer.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        {featuredIdeer.map((post) => <ArticleCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Projekter</h2>
+        <p class="muted">
+          Praktiske initiativer, prototyper og forsøg på at bygge noget mindre dumt
+          end standardmodellen.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        {featuredProjekter.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
 </BaseLayout>

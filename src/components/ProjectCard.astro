@@ -1,0 +1,14 @@
+---
+const { project } = Astro.props;
+---
+
+<article class="card">
+  <h3>
+    <a href={`/projekter/${project.data.slug}/`}>{project.data.title}</a>
+  </h3>
+  <p class="muted">{project.data.summary}</p>
+  <div class="meta">
+    <span>{project.data.date}</span>
+    <span>{project.data.status}</span>
+  </div>
+</article>
