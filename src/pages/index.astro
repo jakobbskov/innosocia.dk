@@ -47,6 +47,7 @@ const featuredProjekter = projekter.filter((p) => p.data.featured);
         <p class="muted">
           Sovereign-apps bygget med fokus på autonomi, lokal data og forståelig logik.
         </p>
+        <p><a href="/apps/">Se alle apps →</a></p>
       </div>
 
       <div class="grid grid-3">
@@ -63,6 +64,7 @@ const featuredProjekter = projekter.filter((p) => p.data.featured);
           Essays og refleksioner om digital suverænitet, local-first software og
           rolige systemer.
         </p>
+        <p><a href="/ideer/">Se alle idéer →</a></p>
       </div>
 
       <div class="grid grid-2">
@@ -79,10 +81,54 @@ const featuredProjekter = projekter.filter((p) => p.data.featured);
           Praktiske initiativer, prototyper og forsøg på at bygge noget mindre dumt
           end standardmodellen.
         </p>
+        <p><a href="/projekter/">Se alle projekter →</a></p>
       </div>
 
       <div class="grid grid-2">
         {featuredProjekter.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Find rundt</h2>
+        <p class="muted">
+          Direkte adgang til de vigtigste sider på sitet.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3><a href="/apps/">Apps</a></h3>
+          <p class="muted">Oversigt over Sovereign-apps og værktøjer.</p>
+        </div>
+
+        <div class="card">
+          <h3><a href="/ideer/">Idéer</a></h3>
+          <p class="muted">Tekster om digital suverænitet og local-first software.</p>
+        </div>
+
+        <div class="card">
+          <h3><a href="/projekter/">Projekter</a></h3>
+          <p class="muted">Initiativer, prototyper og udviklingsspor.</p>
+        </div>
+
+        <div class="card">
+          <h3><a href="/principper/">Principper</a></h3>
+          <p class="muted">Grundidéer og arbejdsprincipper bag Innosocia.</p>
+        </div>
+
+        <div class="card">
+          <h3><a href="/om/">Om</a></h3>
+          <p class="muted">Baggrund, formål og retning for Innosocia.</p>
+        </div>
+
+        <div class="card">
+          <h3><a href="/kontakt/">Kontakt</a></h3>
+          <p class="muted">Kontaktoplysninger og muligheder for henvendelse.</p>
+        </div>
       </div>
     </div>
   </section>
