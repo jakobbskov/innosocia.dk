@@ -271,3 +271,18 @@ hr {
 
 }
 
+
+/* Kort-tekst mere læsbar */
+.card p {
+  font-weight: 450;
+}
+
+.card {
+  border-color: rgba(0,0,0,0.08);
+}
+
+
+.card h3 {
+  font-weight: 550;
+}
+
