@@ -25,12 +25,56 @@ relatedApps:
   - "sovereign-planta"
 ---
 
-Sovereign Strength samler træning, progression og refleksion i et enkelt system.
+Sovereign Strength er et forsøg på at bygge en træningsapp, der tager struktur og progression alvorligt uden at drukne brugeren i støj, abonnementstænkning eller pseudo-coaching.
+
+Mange træningsapps er enten for overfladiske eller for oppustede. De lover optimering, men leverer ofte bare logning, badges og visuel aktivitet, som ikke nødvendigvis gør træningen mere sammenhængende.
 
 ## Formål
 
-At gøre træning mere sammenhængende, mere forståelig og mindre afhængig af generiske fitnessplatforme.
+Formålet er at samle træningshistorik, belastning, refleksion og progression i et værktøj, der er læsbart og brugbart over tid.
 
-## Hvorfor det findes
+Appen skal ikke bare registrere, hvad der skete. Den skal hjælpe brugeren med at forstå, hvad der er ved at ske:
+- går træningen fremad?
+- er volumen passende?
+- er belastningen realistisk?
+- er der brug for justering, vedligehold eller optrapning?
 
-De fleste træningsapps er enten for simple eller fyldt med støj, abonnementer og halvforklarede mekanikker. Sovereign Strength bygger i stedet på struktur, læring og forklarbar progression.
+## Hvilket problem appen reagerer på
+
+Træning bliver ofte unødigt fragmenteret.
+
+Man har måske:
+- en notesapp
+- et regneark
+- en tilfældig fitness-app
+- en løs idé om progression
+- lidt hukommelse
+- lidt gætværk
+
+Det fungerer et stykke tid, men gør det svært at skabe sammenhæng.
+
+Sovereign Strength forsøger derfor at bygge et værktøj med:
+- enkel registrering
+- tydelig progression
+- forklarbar beslutningslogik
+- lokal kontrol over egne data
+
+## Hvad appen skal kunne på sigt
+
+På sigt bør appen kunne understøtte:
+- øvelseslogik
+- sæt, reps og belastning
+- progression og deloads
+- kontekstuelle noter
+- simple beslutningsforslag
+- sammenhæng mellem styrke, løb og anden træning
+
+Alt sammen uden at brugeren behøver overlade sin træningspraksis til en black box.
+
+## Hvorfor den passer ind i Innosocia
+
+Sovereign Strength handler i sidste ende ikke kun om træning.
+
+Den handler om at bygge et værktøj, hvor et menneske kan arbejde systematisk med kroppen uden at blive gjort afhængig af endnu en platform, der vil eje både historikken og opmærksomheden.
+
+Det er local-first træningslogik med mere rygrad og mindre glitter.

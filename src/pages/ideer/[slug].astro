@@ -22,7 +22,6 @@ const relatedIdeer = allIdeer.filter((entry) =>
 ---
 
 <BaseLayout title={`${post.data.title} | Innosocia`} description={post.data.description}>
-
   <section class="hero">
     <div class="wrapper">
       <p class="eyebrow">Idé</p>
@@ -38,14 +37,6 @@ const relatedIdeer = allIdeer.filter((entry) =>
 
   <section class="section">
     <div class="reading">
-      <h2>Hvorfor teksten findes</h2>
-      <p>{post.data.why}</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="reading">
-      <h2>Teksten</h2>
       <Content />
     </div>
   </section>
@@ -56,7 +47,7 @@ const relatedIdeer = allIdeer.filter((entry) =>
         <div class="section-head">
           <h2>Relaterede idéer</h2>
           <p class="muted">
-            Andre tekster med beslægtede spørgsmål og perspektiver.
+            Andre tekster i samme spor.
           </p>
         </div>
 
@@ -66,5 +57,4 @@ const relatedIdeer = allIdeer.filter((entry) =>
       </div>
     </section>
   )}
-
 </BaseLayout>

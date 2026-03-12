@@ -22,7 +22,6 @@ const relatedApps = allApps.filter((entry) =>
 ---
 
 <BaseLayout title={`${app.data.title} | Innosocia`} description={app.data.summary}>
-
   <section class="hero">
     <div class="wrapper">
       <p class="eyebrow">App</p>
@@ -40,34 +39,20 @@ const relatedApps = allApps.filter((entry) =>
 
   <section class="section">
     <div class="reading">
-      <h2>Hvorfor den findes</h2>
-      <p>{app.data.why}</p>
+      <Content />
     </div>
   </section>
 
   {app.data.solves?.length > 0 && (
     <section class="section">
       <div class="reading">
-        <h2>Hvad den prøver at løse</h2>
+        <h2>Det appen prøver at løse</h2>
         <ul>
           {app.data.solves.map((item) => <li>{item}</li>)}
         </ul>
       </div>
     </section>
   )}
-
-  <section class="section">
-    <div class="reading">
-      <h2>Nuværende status</h2>
-      <p>
-        <strong>{app.data.status}</strong> · Senest opdateret {app.data.updatedAt}.
-      </p>
-      <p class="muted">
-        Statusfeltet bruges til at vise hvor langt appen er i sin udvikling, fra idé
-        til prototype til mere stabilt værktøj.
-      </p>
-    </div>
-  </section>
 
   {app.data.techDirection?.length > 0 && (
     <section class="section">
@@ -80,20 +65,13 @@ const relatedApps = allApps.filter((entry) =>
     </section>
   )}
 
-  <section class="section">
-    <div class="reading">
-      <h2>Uddybning</h2>
-      <Content />
-    </div>
-  </section>
-
   {relatedApps.length > 0 && (
     <section class="section">
       <div class="wrapper">
         <div class="section-head">
           <h2>Relaterede apps</h2>
           <p class="muted">
-            Andre værktøjer i Sovereign-økosystemet med beslægtet retning.
+            Andre værktøjer i samme økosystem.
           </p>
         </div>
 
@@ -103,5 +81,4 @@ const relatedApps = allApps.filter((entry) =>
       </div>
     </section>
   )}
-
 </BaseLayout>

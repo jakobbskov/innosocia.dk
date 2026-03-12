@@ -25,12 +25,47 @@ relatedApps:
   - "sovereign-planta"
 ---
 
-Sovereign Finance er bygget til mennesker, der vil forstå deres økonomi uden at outsource tænkningen til endnu en platform.
+Sovereign Finance er et forsøg på at bygge et økonomiværktøj, der ikke gør brugeren mere afhængig, mere forvirret eller mere styret af andres logik.
+
+Mange økonomiapps lover overblik, men leverer i praksis dashboards, abonnementstænkning og pæne visualiseringer, som ikke nødvendigvis gør brugeren klogere. De viser noget. De forklarer ikke nødvendigvis noget.
 
 ## Formål
 
-At skabe et enkelt og forklarbart system for økonomisk overblik, prioritering og langsigtet retning.
+Formålet er at gøre personlig økonomi mere læsbar.
 
-## Hvorfor det findes
+Det handler ikke kun om at registrere poster eller holde styr på budgetlinjer. Det handler om at skabe et værktøj, hvor økonomiske valg kan forstås i en sammenhæng og ikke bare dukker op som tal uden retning.
 
-Mange økonomiværktøjer er enten overfladiske, manipulerende eller bundet til abonnementer og cloud-platforme. Sovereign Finance er tænkt som et alternativ med mere kontrol og mindre støj.
+Et godt økonomiværktøj bør ikke bare vise data. Det bør hjælpe brugeren med at udvikle dømmekraft.
+
+## Hvilket problem appen reagerer på
+
+Personlig økonomi er for mange blevet reduceret til en blanding af:
+- kontoudtog
+- bankkategorier
+- abonnementsoverblik
+- tilfældige apps
+- fragmenteret planlægning
+
+Det giver information, men ikke nødvendigvis forståelse.
+
+Sovereign Finance forsøger derfor at samle overblik, prioritering og refleksion i ét roligere system.
+
+## Hvad appen skal kunne på sigt
+
+På sigt bør Sovereign Finance kunne understøtte:
+- budget og frie midler
+- økonomiske scenarier
+- mål og buffere
+- forklarbare anbefalinger
+- beslutningsstøtte uden black-box logik
+- lokal eller selvkontrolleret datalagring
+
+Det afgørende er ikke flest mulige features. Det afgørende er, at logikken bag dem er tydelig.
+
+## Hvorfor den passer ind i Innosocia
+
+Sovereign Finance er ikke bare en økonomiapp. Den er et eksempel på den type værktøj Innosocia forsøger at udvikle:
+
+software der støtter menneskelig dømmekraft i stedet for at erstatte den med abstraktion, friktion eller platformafhængighed.
+
+Det er økonomi som praksis, ikke som produktfælde.
