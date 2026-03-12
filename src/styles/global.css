@@ -2,7 +2,7 @@
   --bg: #f7f5f1;
   --surface: #fcfbf8;
   --text: #1f2421;
-  --muted: #5d675f;
+  --muted: #465049;
   --border: #d9ddd8;
   --accent: #2f5d50;
   --accent-2: #556b78;
@@ -226,3 +226,11 @@ hr {
     padding: 3.5rem 0 2rem;
   }
 }
+
+/* Brødtekst lidt mere tyngde */
+.reading p,
+.card p,
+.hero p {
+  font-weight: 450;
+}
+
