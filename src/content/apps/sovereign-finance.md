@@ -23,6 +23,9 @@ techDirection:
 relatedApps:
   - "sovereign-strength"
   - "sovereign-planta"
+
+repoUrl: "https://github.com/jakobbskov/sovereign-finance"
+license: "MIT"
 ---
 
 Sovereign Finance er et forsøg på at bygge et økonomiværktøj, der ikke gør brugeren mere afhængig, mere forvirret eller mere styret af andres logik.

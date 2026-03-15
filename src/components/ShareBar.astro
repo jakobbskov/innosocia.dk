@@ -1,0 +1,20 @@
+---
+const { url, title, text } = Astro.props;
+
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+const encodedText = encodeURIComponent(text || title);
+
+const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+const xUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
+const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+const mailUrl = `mailto:?subject=${encodedTitle}&body=${encodedText}%0A%0A${encodedUrl}`;
+---
+
+<div class="sharebar" aria-label="Del siden">
+  <span class="sharebar__label">Del</span>
+  <a class="sharebar__link" href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a class="sharebar__link" href={xUrl} target="_blank" rel="noopener noreferrer">X</a>
+  <a class="sharebar__link" href={facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a class="sharebar__link" href={mailUrl}>Mail</a>
+</div>

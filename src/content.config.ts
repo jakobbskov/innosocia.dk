@@ -16,6 +16,9 @@ const apps = defineCollection({
     solves: z.array(z.string()).default([]),
     techDirection: z.array(z.string()).default([]),
     relatedApps: z.array(z.string()).default([]),
+
+    repoUrl: z.string().url().optional(),
+    license: z.string().optional(),
   }),
 });
 

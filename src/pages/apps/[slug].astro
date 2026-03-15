@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import AppCard from "../../components/AppCard.astro";
+import ShareBar from "../../components/ShareBar.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -19,9 +20,17 @@ const allApps = await getCollection("apps");
 const relatedApps = allApps.filter((entry) =>
   app.data.relatedApps?.includes(entry.data.slug)
 );
+
+const pageUrl = `https://innosocia.dk/apps/${app.data.slug}/`;
+const pageImage = "https://innosocia.dk/social-preview-default.png";
 ---
 
-<BaseLayout title={`${app.data.title} | Innosocia`} description={app.data.summary}>
+<BaseLayout
+  title={`${app.data.title} | Innosocia`}
+  description={app.data.summary}
+  image={pageImage}
+  canonical={pageUrl}
+>
   <section class="hero">
     <div class="wrapper">
       <p class="eyebrow">App</p>
@@ -31,9 +40,21 @@ const relatedApps = allApps.filter((entry) =>
       <div class="meta" style="margin-top: 1rem;">
         <span>Status: {app.data.status}</span>
         <span>Opdateret: {app.data.updatedAt}</span>
+        {app.data.license && <span>Licens: {app.data.license}</span>}
+        {app.data.repoUrl && (
+          <span>
+            Kode: <a href={app.data.repoUrl} target="_blank" rel="noopener noreferrer">GitHub</a>
+          </span>
+        )}
       </div>
 
       <p class="muted" style="margin-top: 1rem;">{app.data.summary}</p>
+
+      <ShareBar
+        url={pageUrl}
+        title={app.data.title}
+        text={app.data.summary}
+      />
     </div>
   </section>
 

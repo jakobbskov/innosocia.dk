@@ -23,6 +23,9 @@ techDirection:
 relatedApps:
   - "sovereign-finance"
   - "sovereign-strength"
+
+repoUrl: "https://github.com/jakobbskov/sovereign-planta"
+license: "MIT"
 ---
 
 Sovereign Planta er et forsøg på at gøre plantepleje mere systematisk uden at gøre den mere stressende.

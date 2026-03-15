@@ -23,6 +23,9 @@ techDirection:
 relatedApps:
   - "sovereign-finance"
   - "sovereign-planta"
+
+repoUrl: "https://github.com/jakobbskov/sovereign-strength"
+license: "MIT"
 ---
 
 Sovereign Strength er et forsøg på at bygge en træningsapp, der tager struktur og progression alvorligt uden at drukne brugeren i støj, abonnementstænkning eller pseudo-coaching.
