@@ -791,3 +791,44 @@ body {
   }
 
 }
+
+html, body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  font-weight: 500;
+  color: #1f2321;
+}
+
+p,
+.card p,
+.reading p,
+.hero p,
+.section p {
+  font-weight: 500;
+  color: #2a2f2c;
+}
+
+.muted {
+  color: #3f4742;
+  font-weight: 500;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+.site-nav a {
+  font-weight: 550;
+}
