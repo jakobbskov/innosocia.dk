@@ -715,3 +715,79 @@ body {
     justify-content: center;
   }
 }
+
+/* -------------------------------- */
+/* Fix tynd mobiltypografi          */
+/* -------------------------------- */
+
+@media (max-width: 768px) {
+
+  body {
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  p,
+  .muted,
+  .card p,
+  .reading p,
+  .hero p {
+    font-weight: 500;
+  }
+
+  h1 {
+    font-weight: 650;
+  }
+
+  h2 {
+    font-weight: 620;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  .site-nav a {
+    font-weight: 520;
+  }
+
+}
+
+/* -------------------------------- */
+/* Fix tynd mobiltypografi          */
+/* -------------------------------- */
+
+@media (max-width: 768px) {
+
+  body {
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  p,
+  .muted,
+  .card p,
+  .reading p,
+  .hero p {
+    font-weight: 500;
+  }
+
+  h1 {
+    font-weight: 650;
+  }
+
+  h2 {
+    font-weight: 620;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  .site-nav a {
+    font-weight: 520;
+  }
+
+}
