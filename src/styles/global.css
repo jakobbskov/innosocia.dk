@@ -379,3 +379,10 @@ body {
     padding: 0.55rem 0.8rem;
   }
 }
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1.2rem;
+}
+
