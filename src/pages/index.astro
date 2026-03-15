@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RealityStrip from "../components/RealityStrip.astro";
+import HeroBackground from "../components/HeroBackground.astro";
 import { getCollection } from "astro:content";
 
 import AppCard from "../components/AppCard.astro";
@@ -20,7 +21,9 @@ const featuredProjekter = projekter.filter((p) => p.data.featured);
   title="Innosocia"
   description="Digitale værktøjer med rygrad. Apps, idéer og projekter om local-first software, digital suverænitet og rolig teknologi."
 >
-  <section class="hero">
+  <section class="hero hero--with-bg">
+    <HeroBackground />
+
     <div class="wrapper">
       <p class="eyebrow">Innosocia</p>
 

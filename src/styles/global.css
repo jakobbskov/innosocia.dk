@@ -386,3 +386,152 @@ body {
   gap: 1.2rem;
 }
 
+
+/* -------------------------------- */
+/* Hero background animation        */
+/* -------------------------------- */
+
+.hero--with-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--with-bg .wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.9;
+}
+
+.hero-bg__svg {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  display: block;
+}
+
+.hero-bg__grid path {
+  stroke: rgba(47, 93, 80, 0.07);
+  stroke-width: 1;
+}
+
+.hero-bg__line {
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  opacity: 0.34;
+}
+
+.hero-bg__line--a {
+  stroke: rgba(47, 93, 80, 0.28);
+  animation: heroLinePulse 11s ease-in-out infinite;
+}
+
+.hero-bg__line--b {
+  stroke: rgba(32, 58, 84, 0.20);
+  animation: heroLinePulse 14s ease-in-out infinite 1s;
+}
+
+.hero-bg__line--c {
+  stroke: rgba(61, 107, 96, 0.22);
+  animation: heroLinePulse 13s ease-in-out infinite 2s;
+}
+
+.hero-bg__line--d {
+  stroke: rgba(47, 93, 80, 0.18);
+  animation: heroLinePulse 16s ease-in-out infinite 0.5s;
+}
+
+.hero-bg__node {
+  fill: rgba(47, 93, 80, 0.28);
+  transform-origin: center;
+  animation: heroNodePulse 8s ease-in-out infinite;
+}
+
+.hero-bg__node--2,
+.hero-bg__node--6,
+.hero-bg__node--10,
+.hero-bg__node--14 {
+  animation-delay: 0.8s;
+}
+
+.hero-bg__node--3,
+.hero-bg__node--7,
+.hero-bg__node--11,
+.hero-bg__node--15 {
+  animation-delay: 1.6s;
+}
+
+.hero-bg__node--4,
+.hero-bg__node--8,
+.hero-bg__node--12,
+.hero-bg__node--16 {
+  animation-delay: 2.4s;
+}
+
+.hero-bg__network {
+  animation: heroFloat 24s ease-in-out infinite;
+}
+
+.hero-bg__nodes {
+  animation: heroFloat 30s ease-in-out infinite reverse;
+}
+
+@keyframes heroLinePulse {
+  0%, 100% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.42;
+  }
+}
+
+@keyframes heroNodePulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.22);
+  }
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-8px) translateX(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg__line,
+  .hero-bg__node,
+  .hero-bg__network,
+  .hero-bg__nodes {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    opacity: 0.72;
+  }
+
+  .hero-bg__svg {
+    min-height: 460px;
+  }
+
+  .hero-bg__line {
+    stroke-width: 1.6;
+  }
+}
