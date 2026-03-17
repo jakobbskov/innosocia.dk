@@ -1326,3 +1326,182 @@ h3 {
     font-size: 0.78rem;
   }
 }
+
+/* -------------------------------- */
+/* Architecture page                */
+/* -------------------------------- */
+
+.architecture-diagram {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 28px;
+  background: rgba(252, 251, 248, 0.78);
+  border: 1px solid rgba(47, 93, 80, 0.10);
+  box-shadow: 0 10px 30px rgba(20, 28, 25, 0.04);
+}
+
+.architecture-diagram__layer {
+  display: grid;
+}
+
+.architecture-diagram__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.architecture-diagram__arrow {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.architecture-node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(47, 93, 80, 0.10);
+  box-shadow: 0 10px 18px rgba(25, 31, 28, 0.04);
+}
+
+.architecture-node--wide {
+  min-width: 0;
+}
+
+.architecture-node strong {
+  font-size: 1rem;
+  line-height: 1.15;
+}
+
+.architecture-node span {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .architecture-diagram {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .architecture-diagram__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-node {
+    padding: 0.95rem 1rem;
+  }
+}
+
+/* -------------------------------- */
+/* Architecture page                */
+/* -------------------------------- */
+
+.architecture-diagram {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 28px;
+  background: rgba(252, 251, 248, 0.78);
+  border: 1px solid rgba(47, 93, 80, 0.10);
+  box-shadow: 0 10px 30px rgba(20, 28, 25, 0.04);
+}
+
+.architecture-diagram__layer {
+  display: grid;
+}
+
+.architecture-diagram__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.architecture-diagram__arrow {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.architecture-node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(47, 93, 80, 0.10);
+  box-shadow: 0 10px 18px rgba(25, 31, 28, 0.04);
+}
+
+.architecture-node--wide {
+  min-width: 0;
+}
+
+.architecture-node strong {
+  font-size: 1rem;
+  line-height: 1.15;
+}
+
+.architecture-node span {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .architecture-diagram {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .architecture-diagram__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-node {
+    padding: 0.95rem 1rem;
+  }
+}
+
+/* -------------------------------- */
+/* Status page                      */
+/* -------------------------------- */
+
+.status-grid-note {
+  margin-top: 0.35rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.status-card-strong {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.status-section + .status-section {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .status-card-strong {
+    font-size: 0.78rem;
+  }
+
+  .status-grid-note {
+    font-size: 0.9rem;
+  }
+}
+

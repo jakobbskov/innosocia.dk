@@ -1,0 +1,163 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Architecture | Innosocia"
+  description="Teknisk arkitektur og driftsprincipper bag Innosocia."
+>
+  <section class="hero">
+    <div class="wrapper">
+      <p class="eyebrow">Architecture</p>
+      <h1>Den tekniske struktur bag Innosocia</h1>
+      <p class="muted" style="max-width: 62ch;">
+        Innosocia er ikke bygget som en klassisk cloud-platform. Projektet hviler på en
+        lille, selvhostet og bevidst enkel arkitektur med fokus på local-first principper,
+        tydelige noder og lav platformafhængighed.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="architecture-diagram">
+        <div class="architecture-diagram__layer">
+          <div class="architecture-node architecture-node--wide">
+            <strong>Internet / domæner</strong>
+            <span>innosocia.dk · apps · dokumentation · offentlige indgange</span>
+          </div>
+        </div>
+
+        <div class="architecture-diagram__arrow">↓</div>
+
+        <div class="architecture-diagram__layer">
+          <div class="architecture-node architecture-node--wide">
+            <strong>Reverse proxy / routing</strong>
+            <span>Styrer trafik, endpoints og adskillelse mellem site, apps og tjenester</span>
+          </div>
+        </div>
+
+        <div class="architecture-diagram__arrow">↓</div>
+
+        <div class="architecture-diagram__grid">
+          <div class="architecture-node">
+            <strong>Raspberry Pi</strong>
+            <span>Edge node · Nextcloud · personligt fil- og platformslag</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>Beelink mini-server</strong>
+            <span>App node · apps · eksperimenter · docker-baserede services</span>
+          </div>
+        </div>
+
+        <div class="architecture-diagram__arrow">↓</div>
+
+        <div class="architecture-diagram__grid">
+          <div class="architecture-node">
+            <strong>Sovereign Strength</strong>
+            <span>Træning · logik · progression</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>Sovereign Finance</strong>
+            <span>Økonomi · overblik · beslutningsstøtte</span>
+          </div>
+
+          <div class="architecture-node">
+            <strong>Sovereign Planta</strong>
+            <span>Plantepleje · rytmer · observation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="reading">
+      <h2>Hvorfor arkitekturen ser sådan ud</h2>
+
+      <p>
+        Innosocia er bygget som et lille økosystem af noder og tjenester i stedet for som én
+        stor, central platform. Det gør det lettere at forstå driften, flytte dele rundt og
+        eksperimentere uden at hele systemet bliver skrøbeligt.
+      </p>
+
+      <p>
+        Det er ikke en maksimalistisk infrastruktur. Tværtimod. Pointen er at holde systemet
+        lille nok til at kunne vedligeholdes og gennemskues, men stærkt nok til at bære både
+        apps, site og dokumentation.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Noder og roller</h2>
+        <p class="muted">Hver del af systemet har en tydelig funktion.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Raspberry Pi</h3>
+          <p class="muted">
+            Fungerer som edge node og personligt platformslag med fokus på filer,
+            Nextcloud og stabil, lokal infrastruktur.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Beelink mini-server</h3>
+          <p class="muted">
+            Fungerer som applikationsnode til apps, eksperimenter og services, hvor der er
+            behov for mere fleksibilitet og flere ressourcer.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Reverse proxy</h3>
+          <p class="muted">
+            Skaber et samlet offentligt lag udadtil og holder styr på routing mellem site,
+            apps og eventuelle tjeneste-endpoints.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Apps og site</h3>
+          <p class="muted">
+            Innosocia.dk fungerer som front door, mens apps og dokumenter lever i deres egne
+            spor og noder under samme overordnede struktur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="reading">
+      <h2>Arkitekturprincipper</h2>
+
+      <ul>
+        <li>Small systems over large platform stacks</li>
+        <li>Local-first hvor det giver mening</li>
+        <li>Lav afhængighed af eksterne tjenester</li>
+        <li>Tydelig adskillelse mellem roller og noder</li>
+        <li>Mulighed for gradvis udvidelse uden total ombygning</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="reading">
+      <h2>Hvad det peger frem imod</h2>
+
+      <p>
+        På sigt kan denne struktur udvides med flere apps, offentlige filrum, downloads,
+        statusfeeds og eventuelt flere noder. Men udgangspunktet forbliver det samme:
+        små robuste systemer der kan forstås, drives og ændres uden at blive fanget i
+        unødig kompleksitet.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
