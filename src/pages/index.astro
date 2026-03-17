@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RealityStrip from "../components/RealityStrip.astro";
 import HeroBackground from "../components/HeroBackground.astro";
+import HeroSystemCard from "../components/HeroSystemCard.astro";
 import { getCollection } from "astro:content";
 
 import AppCard from "../components/AppCard.astro";
@@ -24,26 +25,30 @@ const featuredProjekter = projekter.filter((p) => p.data.featured);
   <section class="hero hero--with-bg">
     <HeroBackground />
 
-    <div class="wrapper">
-      <p class="eyebrow">Innosocia</p>
+    <div class="wrapper hero-layout">
+      <div class="hero-copy">
+        <p class="eyebrow">Innosocia</p>
 
-      <h1>Digitale værktøjer med rygrad</h1>
+        <h1>Digitale værktøjer med rygrad</h1>
 
-      <p class="muted" style="font-size:1.15rem; max-width:60ch;">
-        Innosocia er et digitalt laboratorium for rolig teknologi, local-first software
-        og værktøjer der styrker menneskers dømmekraft i stedet for at erstatte den.
-      </p>
+        <p class="muted" style="font-size:1.15rem; max-width:60ch;">
+          Innosocia er et digitalt laboratorium for rolig teknologi, local-first software
+          og værktøjer der styrker menneskers dømmekraft i stedet for at erstatte den.
+        </p>
 
-      <p class="muted" style="max-width:60ch;">
-        Her samles apps, idéer og projekter om digital suverænitet,
-        forståelig systemlogik og mere robuste digitale arbejdsformer.
-      </p>
+        <p class="muted" style="max-width:60ch;">
+          Her samles apps, idéer og projekter om digital suverænitet,
+          forståelig systemlogik og mere robuste digitale arbejdsformer.
+        </p>
 
-      <div class="button-row">
-        <a class="button primary" href="/apps/">Udforsk apps</a>
-        <a class="button" href="/ideer/">Læs idéer</a>
-        <a class="button" href="/projekter/">Se projekter</a>
+        <div class="button-row">
+          <a class="button primary" href="/apps/">Udforsk apps</a>
+          <a class="button" href="/ideer/">Læs idéer</a>
+          <a class="button" href="/projekter/">Se projekter</a>
+        </div>
       </div>
+
+      <HeroSystemCard />
     </div>
   </section>
 
