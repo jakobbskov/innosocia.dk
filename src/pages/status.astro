@@ -21,6 +21,104 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="wrapper">
       <div class="section-head">
+        <h2>Seneste verificerede deploy</h2>
+        <p class="muted">
+          Denne driftsstatus opdateres automatisk af deploy-scriptet efter live-validering.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 id="deploy-status-title">Status indlæses</h3>
+          <p class="muted" id="deploy-status-summary">
+            Henter seneste status fra <code>/status.json</code>.
+          </p>
+          <p class="muted" id="deploy-status-meta"></p>
+          <p><a href="/status.json">Se maskinlæsbar status →</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Live routes</h3>
+          <div id="deploy-status-routes" class="status-route-list">
+            <p class="muted">Indlæser route-status…</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const title = document.getElementById("deploy-status-title");
+    const summary = document.getElementById("deploy-status-summary");
+    const meta = document.getElementById("deploy-status-meta");
+    const routes = document.getElementById("deploy-status-routes");
+
+    const escapeHtml = (value) =>
+      String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+    const formatDate = (value) => {
+      if (!value) return "ukendt tidspunkt";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return date.toLocaleString("da-DK", {
+        dateStyle: "medium",
+        timeStyle: "short",
+      });
+    };
+
+    fetch("/status.json", { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Statusfil returnerede ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const ok = Boolean(data.ok);
+        title.textContent = ok ? "Live-site valideret" : "Status kræver opmærksomhed";
+        summary.textContent = data.note || "Ingen statusnote angivet.";
+        meta.textContent = `Senest tjekket: ${formatDate(data.checked_at)} · Branch: ${data.branch || "ukendt"} · Commit: ${data.commit || "ukendt"}`;
+
+        const routeItems = Array.isArray(data.routes) ? data.routes : [];
+
+        if (routeItems.length === 0) {
+          routes.innerHTML = '<p class="muted">Ingen route-checks er registreret endnu.</p>';
+          return;
+        }
+
+        routes.innerHTML = routeItems
+          .map((route) => {
+            const routeOk = route.ok ? "OK" : "Fejl";
+            const status = route.status ?? "ukendt";
+            const server = route.server || "ukendt server";
+            const url = route.url || "#";
+
+            return `
+              <div class="status-route">
+                <strong>${escapeHtml(routeOk)}</strong>
+                <a href="${escapeHtml(url)}">${escapeHtml(url)}</a>
+                <span>${escapeHtml(status)} · ${escapeHtml(server)}</span>
+              </div>
+            `;
+          })
+          .join("");
+      })
+      .catch((error) => {
+        title.textContent = "Status kunne ikke indlæses";
+        summary.textContent = "Statusfilen kunne ikke hentes. Det betyder ikke nødvendigvis nedetid, men statusvisningen skal undersøges.";
+        meta.textContent = error.message;
+        routes.innerHTML = '<p class="muted">Ingen route-status kunne vises.</p>';
+      });
+  </script>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
         <h2>Nu</h2>
         <p class="muted">Det der faktisk findes og er i bevægelse.</p>
       </div>

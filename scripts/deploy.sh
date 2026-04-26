@@ -8,6 +8,7 @@ REQUIRED_FILES=(
   "dist/index.html"
   "dist/robots.txt"
   "dist/sitemap-index.xml"
+  "dist/status.json"
 )
 
 LIVE_URLS=(
@@ -16,6 +17,7 @@ LIVE_URLS=(
   "https://innosocia.dk/apps/"
   "https://innosocia.dk/status/"
   "https://innosocia.dk/sitemap-index.xml"
+  "https://innosocia.dk/status.json"
 )
 
 echo "=== Innosocia.dk deploy ==="
@@ -67,6 +69,7 @@ echo "=== Deploy dist/ to ${REMOTE_HOST}:${REMOTE_WEBROOT}/ ==="
 rsync -av --delete dist/ "${REMOTE_HOST}:${REMOTE_WEBROOT}/"
 
 echo "=== Live validation ==="
+STATUS_ROUTES_JSON=""
 for url in "${LIVE_URLS[@]}"; do
   status="$(curl -sS -o /dev/null -w "%{http_code}" "$url")"
   server="$(curl -sSI "$url" | awk 'tolower($1)=="server:" {print $2}' | tr -d '\r' | head -n 1)"
@@ -82,6 +85,49 @@ for url in "${LIVE_URLS[@]}"; do
     echo "ERROR: Unexpected server for $url: $server"
     exit 1
   fi
+
+  route_json="$(python3 - <<PYJSON
+import json
+print(json.dumps({
+    "url": "$url",
+    "status": int("$status"),
+    "server": "$server",
+    "ok": True,
+}, ensure_ascii=False))
+PYJSON
+)"
+
+  if [[ -z "$STATUS_ROUTES_JSON" ]]; then
+    STATUS_ROUTES_JSON="$route_json"
+  else
+    STATUS_ROUTES_JSON="$STATUS_ROUTES_JSON,$route_json"
+  fi
 done
+
+echo "=== Write deploy status ==="
+CHECKED_AT="$(date -Iseconds)"
+COMMIT="$(git rev-parse --short HEAD)"
+
+python3 - <<PYJSON
+import json
+from pathlib import Path
+
+status = {
+    "site": "innosocia.dk",
+    "generated_by": "scripts/deploy.sh",
+    "checked_at": "$CHECKED_AT",
+    "branch": "$BRANCH",
+    "commit": "$COMMIT",
+    "ok": True,
+    "routes": [$STATUS_ROUTES_JSON],
+    "note": "Generated after successful live validation.",
+}
+
+Path("dist/status.json").write_text(
+    json.dumps(status, ensure_ascii=False, indent=2) + "\n"
+)
+PYJSON
+
+rsync -av dist/status.json "${REMOTE_HOST}:${REMOTE_WEBROOT}/status.json"
 
 echo "=== Deploy complete ==="
