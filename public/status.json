@@ -1,0 +1,10 @@
+{
+  "site": "innosocia.dk",
+  "generated_by": "fallback",
+  "checked_at": null,
+  "branch": null,
+  "commit": null,
+  "ok": false,
+  "routes": [],
+  "note": "Status is updated automatically by scripts/deploy.sh after successful live validation."
+}

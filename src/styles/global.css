@@ -1565,3 +1565,48 @@ h3 {
     padding: 0.38rem 0.62rem;
   }
 }
+
+/* -------------------------------- */
+/* Deploy status                    */
+/* -------------------------------- */
+
+.status-route-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.status-route {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 16px;
+  background: rgba(47, 93, 80, 0.06);
+  border: 1px solid rgba(47, 93, 80, 0.08);
+}
+
+.status-route strong {
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-route a {
+  overflow-wrap: anywhere;
+  font-weight: 650;
+}
+
+.status-route span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .status-route {
+    padding: 0.7rem;
+  }
+
+  .status-route span {
+    font-size: 0.86rem;
+  }
+}
