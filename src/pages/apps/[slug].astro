@@ -58,6 +58,35 @@ const pageImage = "https://innosocia.dk/social-preview-default.png";
     </div>
   </section>
 
+  {app.data.screenshots?.length > 0 && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Sådan ser appen ud</h2>
+          <p class="muted">
+            Tre nedslag i den aktuelle prototype.
+          </p>
+        </div>
+
+        <div class="app-screenshot-grid">
+          {app.data.screenshots.map((screenshot) => (
+            <figure class="app-screenshot-card">
+              <img
+                src={screenshot.src}
+                alt={screenshot.alt}
+                loading="lazy"
+              />
+              <figcaption>
+                <strong>{screenshot.title}</strong>
+                <span>{screenshot.caption}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="section">
     <div class="reading">
       <Content />

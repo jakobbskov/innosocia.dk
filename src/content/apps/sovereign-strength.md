@@ -26,6 +26,20 @@ relatedApps:
 
 repoUrl: "https://github.com/jakobbskov/sovereign-strength"
 license: "MIT"
+
+screenshots:
+  - src: "/images/apps/sovereign-strength/overview-history.png"
+    alt: "Historik og ugentlig rytme i Sovereign Strength"
+    title: "Historik og ugerytme"
+    caption: "Se gennemførte pas, seneste workouts og hvordan ugen følger planen."
+  - src: "/images/apps/sovereign-strength/check-in.png"
+    alt: "Check-in med søvn, energi, ømhed og tid i Sovereign Strength"
+    title: "Check-in før dagens plan"
+    caption: "Angiv tid, søvn, energi og ømhed, før appen beregner dagens træning."
+  - src: "/images/apps/sovereign-strength/workout-player.png"
+    alt: "Træningsflow med aktiv timer i Sovereign Strength"
+    title: "Træningsflow"
+    caption: "Følg øvelser, sæt og tid direkte under træningen."
 ---
 
 Sovereign Strength er et forsøg på at bygge en træningsapp, der tager struktur og progression alvorligt uden at drukne brugeren i støj, abonnementstænkning eller pseudo-coaching.
