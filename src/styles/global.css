@@ -1610,3 +1610,65 @@ h3 {
     font-size: 0.86rem;
   }
 }
+
+/* -------------------------------- */
+/* App screenshots                  */
+/* -------------------------------- */
+
+.app-screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.app-screenshot-card {
+  margin: 0;
+  padding: 0.8rem;
+  border-radius: 28px;
+  background: rgba(252, 251, 248, 0.82);
+  border: 1px solid rgba(47, 93, 80, 0.10);
+  box-shadow: 0 10px 30px rgba(20, 28, 25, 0.05);
+}
+
+.app-screenshot-card img {
+  display: block;
+  width: 100%;
+  max-height: 720px;
+  object-fit: contain;
+  border-radius: 22px;
+  background: #111;
+  border: 1px solid rgba(47, 93, 80, 0.10);
+}
+
+.app-screenshot-card figcaption {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem 0.35rem 0.15rem;
+}
+
+.app-screenshot-card figcaption strong {
+  font-size: 1rem;
+}
+
+.app-screenshot-card figcaption span {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 520px) {
+  .app-screenshot-grid {
+    gap: 1rem;
+  }
+
+  .app-screenshot-card {
+    padding: 0.65rem;
+    border-radius: 22px;
+  }
+
+  .app-screenshot-card img {
+    max-height: 640px;
+    border-radius: 18px;
+  }
+}

@@ -19,6 +19,12 @@ const apps = defineCollection({
 
     repoUrl: z.string().url().optional(),
     license: z.string().optional(),
+    screenshots: z.array(z.object({
+      src: z.string(),
+      alt: z.string(),
+      title: z.string(),
+      caption: z.string(),
+    })).default([]),
   }),
 });
 
