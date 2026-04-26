@@ -108,9 +108,14 @@ echo "=== Write deploy status ==="
 CHECKED_AT="$(date -Iseconds)"
 COMMIT="$(git rev-parse --short HEAD)"
 
-python3 - <<PYJSON
+STATUS_ROUTES_JSON_ARRAY="[$STATUS_ROUTES_JSON]"
+
+STATUS_ROUTES_JSON_ARRAY="$STATUS_ROUTES_JSON_ARRAY" python3 - <<PYJSON
 import json
+import os
 from pathlib import Path
+
+routes = json.loads(os.environ["STATUS_ROUTES_JSON_ARRAY"])
 
 status = {
     "site": "innosocia.dk",
@@ -119,7 +124,7 @@ status = {
     "branch": "$BRANCH",
     "commit": "$COMMIT",
     "ok": True,
-    "routes": [$STATUS_ROUTES_JSON],
+    "routes": routes,
     "note": "Generated after successful live validation.",
 }
 
