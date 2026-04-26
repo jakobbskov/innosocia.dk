@@ -1,43 +1,66 @@
-# Astro Starter Kit: Minimal
+# Innosocia.dk
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Static Astro site for Innosocia.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Innosocia.dk is the public frontdoor for Innosocia's work with digital sovereignty, local-first tools, calm technology and the Sovereign app ecosystem.
 
-## 🚀 Project Structure
+## Status
 
-Inside of your Astro project, you'll see the following folders and files:
+- Framework: Astro
+- Output: static site
+- Production URL: https://innosocia.dk
+- Source of truth: /home/jakob/github/innosocia.dk
+- Default branch: main
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Requirements
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- Node.js >= 22.12.0
+- npm
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The expected Node version is defined in .nvmrc and package.json.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Local workflow
 
-## 🧞 Commands
+Install dependencies:
 
-All commands are run from the root of the project, from a terminal:
+    npm ci
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Run development server:
 
-## 👀 Want to learn more?
+    npm run dev
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Build static site:
+
+    npm run build
+
+Preview build locally:
+
+    npm run preview
+
+## Validation before commit
+
+Before committing changes, run:
+
+    npm audit
+    npm run build
+
+Expected result:
+
+- npm audit reports 0 vulnerabilities
+- npm run build completes successfully
+- generated output is written to dist/
+
+## Project structure
+
+    src/pages/        Astro pages and routes
+    src/components/   Reusable UI components
+    src/layouts/      Layouts
+    src/styles/       Global CSS
+    public/           Static public assets
+    dist/             Generated build output, not edited manually
+
+## Deploy
+
+Deployment is documented in docs/deployment.md.
+
+Do not edit files directly in a live web root. Build from Git, deploy generated dist/, then validate over HTTP.
