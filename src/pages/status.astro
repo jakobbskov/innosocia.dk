@@ -1,19 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import updates from "../data/updates.json";
+
+const sortedUpdates = [...updates].sort((a, b) => b.date.localeCompare(a.date));
 ---
 
 <BaseLayout
   title="Status | Innosocia"
-  description="Aktuel status og næste skridt for Innosocia."
+  description="Nyt, aktuel status og næste skridt for Innosocia."
 >
   <section class="hero">
     <div class="wrapper">
       <p class="eyebrow">Status</p>
-      <h1>Hvor projektet står lige nu</h1>
+      <h1>Hvad er nyt?</h1>
       <p class="muted" style="max-width: 62ch;">
-        Innosocia udvikles som et lille softwarelaboratorium. Denne side samler den
-        aktuelle status, de næste skridt og den længere retning uden at foregive,
-        at alt er afklaret på forhånd.
+        Her kan du se de seneste ændringer på siden og i projekterne.
+        Ikke alt er færdigt, men her kan du se, hvad der har ændret sig.
       </p>
     </div>
   </section>
@@ -21,105 +23,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="wrapper">
       <div class="section-head">
-        <h2>Seneste verificerede deploy</h2>
-        <p class="muted">
-          Denne driftsstatus opdateres automatisk af deploy-scriptet efter live-validering.
-        </p>
+        <h2>Seneste ændringer</h2>
+        <p class="muted">Kort overblik over de seneste ændringer.</p>
       </div>
 
       <div class="grid grid-2">
-        <div class="card">
-          <h3 id="deploy-status-title">Status indlæses</h3>
-          <p class="muted" id="deploy-status-summary">
-            Henter seneste status fra <code>/status.json</code>.
-          </p>
-          <p class="muted" id="deploy-status-meta"></p>
-          <p><a href="/status.json">Se maskinlæsbar status →</a></p>
-        </div>
-
-        <div class="card">
-          <h3>Live routes</h3>
-          <div id="deploy-status-routes" class="status-route-list">
-            <p class="muted">Indlæser route-status…</p>
-          </div>
-        </div>
+        {sortedUpdates.map((item) => (
+          <article class="card">
+            <p class="eyebrow">{item.area} · {item.date}</p>
+            <h3>{item.title}</h3>
+            <p class="muted">{item.summary}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <script>
-    const title = document.getElementById("deploy-status-title");
-    const summary = document.getElementById("deploy-status-summary");
-    const meta = document.getElementById("deploy-status-meta");
-    const routes = document.getElementById("deploy-status-routes");
-
-    const escapeHtml = (value) =>
-      String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-    const formatDate = (value) => {
-      if (!value) return "ukendt tidspunkt";
-      const date = new Date(value);
-      if (Number.isNaN(date.getTime())) return value;
-      return date.toLocaleString("da-DK", {
-        dateStyle: "medium",
-        timeStyle: "short",
-      });
-    };
-
-    fetch("/status.json", { cache: "no-store" })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Statusfil returnerede ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const ok = Boolean(data.ok);
-        title.textContent = ok ? "Live-site valideret" : "Status kræver opmærksomhed";
-        summary.textContent = data.note || "Ingen statusnote angivet.";
-        meta.textContent = `Senest tjekket: ${formatDate(data.checked_at)} · Branch: ${data.branch || "ukendt"} · Commit: ${data.commit || "ukendt"}`;
-
-        const routeItems = Array.isArray(data.routes) ? data.routes : [];
-
-        if (routeItems.length === 0) {
-          routes.innerHTML = '<p class="muted">Ingen route-checks er registreret endnu.</p>';
-          return;
-        }
-
-        routes.innerHTML = routeItems
-          .map((route) => {
-            const routeOk = route.ok ? "OK" : "Fejl";
-            const status = route.status ?? "ukendt";
-            const server = route.server || "ukendt server";
-            const url = route.url || "#";
-
-            return `
-              <div class="status-route">
-                <strong>${escapeHtml(routeOk)}</strong>
-                <a href="${escapeHtml(url)}">${escapeHtml(url)}</a>
-                <span>${escapeHtml(status)} · ${escapeHtml(server)}</span>
-              </div>
-            `;
-          })
-          .join("");
-      })
-      .catch((error) => {
-        title.textContent = "Status kunne ikke indlæses";
-        summary.textContent = "Statusfilen kunne ikke hentes. Det betyder ikke nødvendigvis nedetid, men statusvisningen skal undersøges.";
-        meta.textContent = error.message;
-        routes.innerHTML = '<p class="muted">Ingen route-status kunne vises.</p>';
-      });
-  </script>
-
   <section class="section">
     <div class="wrapper">
       <div class="section-head">
-        <h2>Nu</h2>
+        <h2>Hvad findes lige nu?</h2>
         <p class="muted">Det der faktisk findes og er i bevægelse.</p>
       </div>
 
@@ -148,7 +71,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="card">
           <h3>Innosocia.dk</h3>
           <p class="muted">
-            Første offentlige version med apps, idéer, projekter, downloads, build log og arkitektur.
+            Første offentlige version med apps, idéer, projekter, downloads, status og arkitektur.
           </p>
         </div>
 
@@ -178,9 +101,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="grid grid-2">
         <div class="card">
-          <h3>App-status og demoer</h3>
+          <h3>Bedre app-status</h3>
           <p class="muted">
-            Synligere status på apps, eventuelt enkle demo-flows eller previews direkte fra sitet.
+            Gøre det tydeligere, hvad der findes i de enkelte apps, og hvad der stadig mangler.
           </p>
         </div>
 
@@ -192,14 +115,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div class="card">
-          <h3>GitHub / open source-lag</h3>
+          <h3>GitHub og open source</h3>
           <p class="muted">
-            Mere tydelig kobling mellem site, repos og udviklingsspor, så Innosocia fremstår endnu mere som softwareprojekt.
+            Mere tydelig kobling mellem site, repos og udviklingsspor.
           </p>
         </div>
 
         <div class="card">
-          <h3>Bedre mobil-UI</h3>
+          <h3>Mobilvisning</h3>
           <p class="muted">
             Fortsat stramning af navigation, spacing og informationshierarki på telefoner og mindre skærme.
           </p>
@@ -228,4 +151,115 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </p>
     </div>
   </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Teknisk tjek</h2>
+        <p class="muted">
+          Denne del viser, om hjemmesiden svarede korrekt efter seneste opdatering.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 id="deploy-status-title">Status indlæses</h3>
+          <p class="muted" id="deploy-status-summary">
+            Henter seneste tekniske tjek.
+          </p>
+          <p class="muted" id="deploy-status-meta"></p>
+          <p><a href="/status.json">Se tekniske detaljer →</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Tjekkede sider</h3>
+          <div id="deploy-status-routes" class="status-route-list">
+            <p class="muted">Indlæser tjekkede sider…</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const title = document.getElementById("deploy-status-title");
+    const summary = document.getElementById("deploy-status-summary");
+    const meta = document.getElementById("deploy-status-meta");
+    const routes = document.getElementById("deploy-status-routes");
+
+    const routeLabels = {
+      "https://innosocia.dk/": "Forside",
+      "https://www.innosocia.dk/": "www-adresse",
+      "https://innosocia.dk/apps/": "Apps",
+      "https://innosocia.dk/status/": "Statusside",
+      "https://innosocia.dk/sitemap-index.xml": "Sitemap",
+      "https://innosocia.dk/status.json": "Teknisk statusfil",
+    };
+
+    const escapeHtml = (value) =>
+      String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+    const formatDate = (value) => {
+      if (!value) return "ukendt tidspunkt";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return date.toLocaleString("da-DK", {
+        dateStyle: "medium",
+        timeStyle: "short",
+      });
+    };
+
+    fetch("/status.json", { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Statusfil returnerede ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const routeItems = Array.isArray(data.routes) ? data.routes : [];
+        const hasTechnicalCheck = Boolean(data.checked_at) && routeItems.length > 0;
+        const ok = Boolean(data.ok);
+
+        if (!hasTechnicalCheck) {
+          title.textContent = "Teknisk tjek er ikke kørt endnu";
+          summary.textContent = "Når siden bliver lagt ud med deploy-scriptet, bliver de vigtigste sider tjekket automatisk.";
+          meta.textContent = "";
+          routes.innerHTML = '<p class="muted">Der vises tjekkede sider her efter næste tekniske tjek.</p>';
+          return;
+        }
+
+        title.textContent = ok ? "Hjemmesiden svarede korrekt" : "Noget kræver opmærksomhed";
+        summary.textContent = ok
+          ? "De vigtigste sider svarede som forventet ved seneste tjek."
+          : "Det seneste tekniske tjek fandt noget, der bør undersøges.";
+
+        meta.textContent = `Senest tjekket: ${formatDate(data.checked_at)} · Version: ${data.commit || "ukendt"}`;
+
+        routes.innerHTML = routeItems
+          .map((route) => {
+            const label = routeLabels[route.url] || route.url || "Ukendt side";
+            const routeOk = route.ok ? "OK" : "Fejl";
+
+            return `
+              <div class="status-route">
+                <strong>${escapeHtml(routeOk)}</strong>
+                <span>${escapeHtml(label)}</span>
+              </div>
+            `;
+          })
+          .join("");
+      })
+      .catch((error) => {
+        title.textContent = "Status kunne ikke indlæses";
+        summary.textContent = "Det tekniske tjek kunne ikke hentes lige nu.";
+        meta.textContent = error.message;
+        routes.innerHTML = '<p class="muted">Ingen teknisk status kunne vises.</p>';
+      });
+  </script>
 </BaseLayout>
