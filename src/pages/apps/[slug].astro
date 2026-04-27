@@ -130,8 +130,27 @@ const pageImage = "https://innosocia.dk/social-preview-default.png";
     </section>
   )}
 
+  {(app.data.dataPrivacyText || app.data.dataPrivacyPoints?.length > 0) && (
+    <section class="section">
+      <div class="reading">
+        <h2>{app.data.dataPrivacyTitle || "Data og privatliv"}</h2>
+
+        {app.data.dataPrivacyText && (
+          <p>{app.data.dataPrivacyText}</p>
+        )}
+
+        {app.data.dataPrivacyPoints?.length > 0 && (
+          <ul>
+            {app.data.dataPrivacyPoints.map((point) => <li>{point}</li>)}
+          </ul>
+        )}
+      </div>
+    </section>
+  )}
+
   <section class="section">
     <div class="reading">
+      <h2>Om appen</h2>
       <Content />
     </div>
   </section>

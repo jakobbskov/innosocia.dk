@@ -25,6 +25,9 @@ const apps = defineCollection({
     primaryActionLabel: z.string().optional(),
     downloadStatus: z.string().optional(),
     nextStep: z.string().optional(),
+    dataPrivacyTitle: z.string().optional(),
+    dataPrivacyText: z.string().optional(),
+    dataPrivacyPoints: z.array(z.string()).default([]),
     screenshots: z.array(z.object({
       src: z.string(),
       alt: z.string(),
