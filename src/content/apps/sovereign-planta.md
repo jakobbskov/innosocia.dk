@@ -75,7 +75,7 @@ Det er mindre vigtigt at gøre appen “smart” end at gøre den brugbar over t
 
 ### Hvorfor den passer ind i Innosocia
 
-Sovereign Planta er et eksempel på rolig teknologi i lille skala.
+Sovereign Planta er et eksempel på et lille værktøj, der skal hjælpe uden at forstyrre mere end nødvendigt.
 
 Den forsøger ikke at overtage praksissen. Den forsøger at støtte den.
 
