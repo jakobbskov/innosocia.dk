@@ -32,13 +32,13 @@ Sovereign Planta er et forsøg på at gøre plantepleje mere systematisk uden at
 
 Mange planteapps lover hjælp, men ender med at blive enten overdesignede, for generiske eller afhængige af platformfunktioner, som ikke gør selve plejen bedre. De producerer notifikationer, men ikke nødvendigvis bedre observation.
 
-## Formål
+### Formål
 
 Formålet er at skabe et roligt værktøj til overblik, rytmer og observationer.
 
 Appen skal ikke gøre plantepleje til et præstationsprojekt. Den skal gøre det lettere at opdage mønstre og handle i tide, uden at brugeren skal holde hele systemet i hovedet.
 
-## Hvilket problem appen reagerer på
+### Hvilket problem appen reagerer på
 
 Plantepleje i hverdagen falder ofte mellem intuition og glemsel.
 
@@ -50,7 +50,7 @@ Man husker lidt, gætter lidt og improviserer lidt. Det virker, lige indtil det 
 
 Sovereign Planta forsøger at samle den viden i en enkel og lokal praksis.
 
-## Hvad appen skal kunne på sigt
+### Hvad appen skal kunne på sigt
 
 På sigt bør appen kunne understøtte:
 - profiler for arter og individuelle planter
@@ -62,7 +62,7 @@ På sigt bør appen kunne understøtte:
 
 Det er mindre vigtigt at gøre appen “smart” end at gøre den brugbar over tid.
 
-## Hvorfor den passer ind i Innosocia
+### Hvorfor den passer ind i Innosocia
 
 Sovereign Planta er et eksempel på rolig teknologi i lille skala.
 

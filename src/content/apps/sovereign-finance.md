@@ -32,7 +32,7 @@ Sovereign Finance er et forsøg på at bygge et økonomiværktøj, der ikke gør
 
 Mange økonomiapps lover overblik, men leverer i praksis dashboards, abonnementstænkning og pæne visualiseringer, som ikke nødvendigvis gør brugeren klogere. De viser noget. De forklarer ikke nødvendigvis noget.
 
-## Formål
+### Formål
 
 Formålet er at gøre personlig økonomi mere læsbar.
 
@@ -40,7 +40,7 @@ Det handler ikke kun om at registrere poster eller holde styr på budgetlinjer. 
 
 Et godt økonomiværktøj bør ikke bare vise data. Det bør hjælpe brugeren med at udvikle dømmekraft.
 
-## Hvilket problem appen reagerer på
+### Hvilket problem appen reagerer på
 
 Personlig økonomi er for mange blevet reduceret til en blanding af:
 - kontoudtog
@@ -53,7 +53,7 @@ Det giver information, men ikke nødvendigvis forståelse.
 
 Sovereign Finance forsøger derfor at samle overblik, prioritering og refleksion i ét roligere system.
 
-## Hvad appen skal kunne på sigt
+### Hvad appen skal kunne på sigt
 
 På sigt bør Sovereign Finance kunne understøtte:
 - budget og frie midler
@@ -65,7 +65,7 @@ På sigt bør Sovereign Finance kunne understøtte:
 
 Det afgørende er ikke flest mulige features. Det afgørende er, at logikken bag dem er tydelig.
 
-## Hvorfor den passer ind i Innosocia
+### Hvorfor den passer ind i Innosocia
 
 Sovereign Finance er ikke bare en økonomiapp. Den er et eksempel på den type værktøj Innosocia forsøger at udvikle:
 

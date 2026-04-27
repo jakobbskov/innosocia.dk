@@ -34,6 +34,13 @@ primaryActionLabel: "Prøv betaen"
 downloadStatus: "Der er ikke frigivet en offentlig APK eller app-build endnu."
 nextStep: "Næste skridt er at gøre status, programmer og brugerflow endnu tydeligere."
 
+dataPrivacyTitle: "Data og privatliv"
+dataPrivacyText: "Sovereign Strength er bygget med local-first retning. Målet er, at træningsdata skal være forståelige, flytbare og så lidt afhængige af eksterne platforme som muligt."
+dataPrivacyPoints:
+  - "Betaen kører som webapp, men retningen er lav platformafhængighed."
+  - "Træningsdata skal bruges til progression og overblik, ikke til fastholdelse."
+  - "Appens logik skal kunne forklares uden skjulte anbefalinger."
+
 screenshots:
   - src: "/images/apps/sovereign-strength/overview-history.png"
     alt: "Historik og ugentlig rytme i Sovereign Strength"
@@ -53,7 +60,7 @@ Sovereign Strength er et forsøg på at bygge en træningsapp, der tager struktu
 
 Mange træningsapps er enten for overfladiske eller for oppustede. De lover optimering, men leverer ofte bare logning, badges og visuel aktivitet, som ikke nødvendigvis gør træningen mere sammenhængende.
 
-## Formål
+### Formål
 
 Formålet er at samle træningshistorik, belastning, refleksion og progression i et værktøj, der er læsbart og brugbart over tid.
 
@@ -63,7 +70,7 @@ Appen skal ikke bare registrere, hvad der skete. Den skal hjælpe brugeren med a
 - er belastningen realistisk?
 - er der brug for justering, vedligehold eller optrapning?
 
-## Hvilket problem appen reagerer på
+### Hvilket problem appen reagerer på
 
 Træning bliver ofte unødigt fragmenteret.
 
@@ -83,7 +90,7 @@ Sovereign Strength forsøger derfor at bygge et værktøj med:
 - forklarbar beslutningslogik
 - lokal kontrol over egne data
 
-## Hvad appen skal kunne på sigt
+### Hvad appen skal kunne på sigt
 
 På sigt bør appen kunne understøtte:
 - øvelseslogik
@@ -95,7 +102,7 @@ På sigt bør appen kunne understøtte:
 
 Alt sammen uden at brugeren behøver overlade sin træningspraksis til en black box.
 
-## Hvorfor den passer ind i Innosocia
+### Hvorfor den passer ind i Innosocia
 
 Sovereign Strength handler i sidste ende ikke kun om træning.
 

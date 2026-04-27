@@ -1672,3 +1672,28 @@ h3 {
     border-radius: 18px;
   }
 }
+
+/* -------------------------------- */
+/* Reading hierarchy                */
+/* -------------------------------- */
+
+.reading h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  line-height: 1.15;
+}
+
+.reading h2 + h3,
+.reading p + h3,
+.reading ul + h3,
+.reading ol + h3 {
+  margin-top: 2.2rem;
+}
+
+@media (max-width: 520px) {
+  .reading h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.65rem;
+  }
+}
