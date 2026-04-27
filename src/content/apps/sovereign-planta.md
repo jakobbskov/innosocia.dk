@@ -26,6 +26,17 @@ relatedApps:
 
 repoUrl: "https://github.com/jakobbskov/sovereign-planta"
 license: "MIT"
+
+availabilityLabel: "Ikke offentligt prøvbar endnu"
+availabilityText: "Sovereign Planta er et prototype- og konceptspor. Der er ikke en offentlig demo endnu."
+downloadStatus: "Der er ikke frigivet en offentlig build eller download endnu."
+nextStep: "Næste skridt er at afklare første enkle prototype for planter, rytmer og observationer."
+dataPrivacyTitle: "Data og privatliv"
+dataPrivacyText: "Sovereign Planta er tænkt som et roligt værktøj, hvor data om planter, placeringer og plejehistorik holdes enkelt og forståeligt."
+dataPrivacyPoints:
+  - "Der er ikke en offentlig version med brugerdata endnu."
+  - "Plejedata skal bruges til overblik og observation, ikke til støjende notifikationer."
+  - "Målet er lokal eller selvkontrolleret datalagring frem for unødvendig platformslåsning."
 ---
 
 Sovereign Planta er et forsøg på at gøre plantepleje mere systematisk uden at gøre den mere stressende.

@@ -26,6 +26,17 @@ relatedApps:
 
 repoUrl: "https://github.com/jakobbskov/sovereign-finance"
 license: "MIT"
+
+availabilityLabel: "Ikke offentligt prøvbar endnu"
+availabilityText: "Sovereign Finance er et prototype- og konceptspor. Der er ikke en offentlig demo endnu."
+downloadStatus: "Der er ikke frigivet en offentlig build eller download endnu."
+nextStep: "Næste skridt er at afklare første brugbare prototype og vise tydeligere, hvad appen skal kunne."
+dataPrivacyTitle: "Data og privatliv"
+dataPrivacyText: "Sovereign Finance bygger på samme retning som resten af Sovereign-apps: økonomidata skal være forståelige, flytbare og så lidt afhængige af eksterne platforme som muligt."
+dataPrivacyPoints:
+  - "Der er ikke en offentlig version med brugerdata endnu."
+  - "Økonomidata skal behandles som følsomme personlige oplysninger."
+  - "Målet er lokal eller selvkontrolleret datalagring frem for unødvendig platformslåsning."
 ---
 
 Sovereign Finance er et forsøg på at bygge et økonomiværktøj, der ikke gør brugeren mere afhængig, mere forvirret eller mere styret af andres logik.
