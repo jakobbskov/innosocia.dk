@@ -3,18 +3,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Downloads | Innosocia"
-  description="Downloads, dokumentation og ressourcer fra Innosocia."
+  title="Ressourcer og downloads | Innosocia"
+  description="Ressourcer, dokumentation og download-status for Innosocia og Sovereign-apps."
 >
   <section class="hero">
     <div class="wrapper">
-      <p class="eyebrow">Downloads</p>
-      <h1>Filer, builds og dokumentation</h1>
+      <p class="eyebrow">Ressourcer</p>
+      <h1>Ressourcer og downloads</h1>
       <p class="muted" style="max-width: 62ch;">
-        Her samles de ting, der faktisk kan hentes: app-builds, dokumentation,
-        PDF’er og andre ressourcer. Ikke et overdesignet downloadcenter. Bare et sted
-        hvor tingene ligger og kan findes.
+        Denne side samler ressourcer, dokumentation og download-status for Innosocia.
+        Der er ikke offentlige app-builds endnu, så siden fungerer lige nu primært som overblik og henvisning.
       </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrapper">
+      <div class="card">
+        <h2>Download-status</h2>
+        <p class="muted">
+          Der er endnu ikke frigivet offentlige builds, APK’er eller installationspakker for Sovereign-apps.
+          Når noget kan hentes, bliver det lagt her med tydelig version, dato og formål.
+        </p>
+        <p>
+          <a href="/status/">Se seneste ændringer →</a>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -22,17 +36,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="wrapper">
       <div class="section-head">
         <h2>Apps</h2>
-        <p class="muted">Builds og relaterede filer for de aktuelle apps.</p>
+        <p class="muted">
+          Status for aktuelle apps og deres offentlige tilgængelighed.
+        </p>
       </div>
 
       <div class="grid grid-3">
         <div class="card">
           <h3>Sovereign Strength</h3>
           <p class="muted">
-            Træningsapp med fokus på struktur, progression og local-first logik.
+            Træningsapp med fokus på struktur, progression og forklarbar logik.
           </p>
-          <p class="muted">Offentligt build er ikke frigivet endnu.</p>
-          <p><a href="/apps/sovereign-strength/">Læs mere om appen →</a></p>
+          <p class="muted">
+            Kan prøves som beta, men der er ikke frigivet offentlig APK eller download-build endnu.
+          </p>
+          <p><a href="/apps/sovereign-strength/">Læs mere →</a></p>
         </div>
 
         <div class="card">
@@ -40,8 +58,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <p class="muted">
             Økonomiværktøj til overblik og beslutninger uden black-box logik.
           </p>
-          <p class="muted">Offentligt build er ikke frigivet endnu.</p>
-          <p><a href="/apps/sovereign-finance/">Læs mere om appen →</a></p>
+          <p class="muted">
+            Ikke offentligt prøvbar endnu. Der er ikke frigivet build eller download.
+          </p>
+          <p><a href="/apps/sovereign-finance/">Læs mere →</a></p>
         </div>
 
         <div class="card">
@@ -49,8 +69,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <p class="muted">
             Rolig plantepleje med rytmer, observation og lokal data.
           </p>
-          <p class="muted">Offentligt build er ikke frigivet endnu.</p>
-          <p><a href="/apps/sovereign-planta/">Læs mere om appen →</a></p>
+          <p class="muted">
+            Ikke offentligt prøvbar endnu. Der er ikke frigivet build eller download.
+          </p>
+          <p><a href="/apps/sovereign-planta/">Læs mere →</a></p>
         </div>
       </div>
     </div>
@@ -59,25 +81,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="wrapper">
       <div class="section-head">
-        <h2>Dokumentation</h2>
-        <p class="muted">Noter og materialer relateret til projektet.</p>
+        <h2>Dokumentation og teknisk overblik</h2>
+        <p class="muted">
+          De vigtigste offentlige sider for at forstå projektets retning, arkitektur og udvikling.
+        </p>
       </div>
 
-      <div class="grid grid-2">
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Principper</h3>
+          <p class="muted">
+            Arbejdsprincipperne bag local-first retning, rolig teknologi og forklarbar software.
+          </p>
+          <p><a href="/principper/">Læs principper →</a></p>
+        </div>
+
         <div class="card">
           <h3>Arkitektur</h3>
           <p class="muted">
-            Overblik over site-struktur, apps, proxy og udviklingsspor.
+            Teknisk overblik over noder, apps, proxy og den enkle infrastruktur bag Innosocia.
           </p>
           <p><a href="/architecture/">Læs arkitektur →</a></p>
         </div>
 
         <div class="card">
-          <h3>Principper</h3>
+          <h3>Build log</h3>
           <p class="muted">
-            Grundprincipperne bag local-first retning, åben kode og rolig teknologi.
+            Historiske udviklingsnoter fra opbygningen af sitet og de første app-spor.
           </p>
-          <p><a href="/principper/">Læs principper →</a></p>
+          <p><a href="/build-log/">Læs build log →</a></p>
         </div>
       </div>
     </div>
@@ -86,21 +118,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="wrapper">
       <div class="section-head">
-        <h2>Ressourcer</h2>
-        <p class="muted">Eksterne eller delte filer, som knytter sig til Innosocia.</p>
+        <h2>Kildekode og offentlige filer</h2>
+        <p class="muted">
+          Hvor kode og eventuelle delte filer kan findes.
+        </p>
       </div>
 
       <div class="grid grid-2">
         <div class="card">
-          <h3>Offentlige filer</h3>
-          <p class="muted">
-            Offentlige filshares er ikke åbnet endnu. Når de frigives,
-            vil de blive linket her i stedet for at gemme døde links bag pæn tekst.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>GitHub og kildekode</h3>
+          <h3>GitHub</h3>
           <p class="muted">
             Kode, repos og versionshistorik findes i projektets GitHub-spor.
           </p>
@@ -108,6 +134,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <a href="https://github.com/jakobbskov" target="_blank" rel="noopener noreferrer">
               Se GitHub →
             </a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Offentlige filshares</h3>
+          <p class="muted">
+            Offentlige filshares er ikke åbnet endnu. Hvis PDF’er, vejledninger eller builds frigives,
+            bliver de linket her uden døde download-knapper og anden ceremoniel tomhed.
           </p>
         </div>
       </div>
