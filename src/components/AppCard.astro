@@ -12,8 +12,15 @@ const { app } = Astro.props;
   <p>{app.data.tagline}</p>
   <p class="muted">{app.data.summary}</p>
 
-  <div class="meta">
-    <span>Status: {app.data.status}</span>
-    <span>Opdateret: {app.data.updatedAt}</span>
-  </div>
+  {app.data.availabilityLabel && (
+    <p class="status-card-strong">{app.data.availabilityLabel}</p>
+  )}
+
+  {app.data.primaryUrl && (
+    <p>
+      <a href={app.data.primaryUrl} target="_blank" rel="noopener noreferrer">
+        {app.data.primaryActionLabel || "Åbn app"}
+      </a>
+    </p>
+  )}
 </article>
