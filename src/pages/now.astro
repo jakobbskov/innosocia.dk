@@ -4,99 +4,86 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Nu | Innosocia"
-  description="Hvad der arbejdes på lige nu i Innosocia."
+  description="Aktuelt fokus i Innosocia: apps, status, principper og samarbejdsspor."
 >
   <section class="hero">
     <div class="wrapper">
       <p class="eyebrow">Nu</p>
-      <h1>Hvad der arbejdes på lige nu</h1>
-      <p class="muted" style="max-width: 60ch;">
-        Innosocia er et personligt softwareprojekt. Denne side samler det, der
-        faktisk er i bevægelse lige nu, så sitet ikke bare beskriver idéer, men
-        også viser fremdrift.
+      <h1>Hvad der har fokus lige nu</h1>
+      <p class="muted" style="max-width: 62ch;">
+        Denne side viser den aktuelle retning for Innosocia. Den er ikke en changelog.
+        Hvis du vil se konkrete ændringer på sitet, ligger de på statussiden.
+      </p>
+      <p>
+        <a class="button primary" href="/status/">Se seneste ændringer</a>
       </p>
     </div>
   </section>
 
   <section class="section">
-    <div class="reading">
-      <h2>Apps i fokus</h2>
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Aktuelt fokus</h2>
+        <p class="muted">
+          De vigtigste spor lige nu.
+        </p>
+      </div>
 
-      <p><strong>Sovereign Strength</strong><br />
-      Arbejde med stabilisering af træningslogik, bedre mobilvisning og mere sammenhæng
-      mellem registrering, progression og brugbarhed i praksis.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Apps som konkret bevis</h3>
+          <p class="muted">
+            App-siderne skal tydeligt vise status, formål, data, privatliv, screenshots og næste skridt.
+          </p>
+          <p><a href="/apps/">Se apps →</a></p>
+        </div>
 
-      <p><strong>Sovereign Finance</strong><br />
-      Arbejde med struktur for personlig økonomi, klarere beslutningslogik og et roligere
-      alternativ til de sædvanlige dashboards og abonnementsløsninger.</p>
+        <div class="card">
+          <h3>Samarbejde</h3>
+          <p class="muted">
+            Innosocia skal være lettere at forstå for kommuner, NGO’er, foreninger og små organisationer.
+          </p>
+          <p><a href="/samarbejde/">Se samarbejde →</a></p>
+        </div>
 
-      <p><strong>Sovereign Planta</strong><br />
-      Arbejde med planteprofiler, rytmer og observationer, så plantepleje kan blive mere
-      systematisk uden at blive mere stressende.</p>
+        <div class="card">
+          <h3>Roligere offentlig side</h3>
+          <p class="muted">
+            Navigation, status og principper strammes, så sitet ikke føles som et teknisk arkiv med forside.
+          </p>
+          <p><a href="/principper/">Se principper →</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="reading">
-      <h2>Repos og kode</h2>
+      <h2>Hvad der ikke er fokus lige nu</h2>
 
       <p>
-        Projektet er efterhånden også forankret i konkrete Git-repos. Det betyder, at
-        Innosocia ikke bare er et website om software, men et sted hvor software faktisk
-        bliver bygget, organiseret og dokumenteret.
+        Innosocia bliver ikke forsøgt gjort større for størrelsens skyld. Fokus er ikke flere sider,
+        flere løfter eller mere teknisk støj.
       </p>
 
       <p>
-        Repos fungerer som arbejdsspor for apps, site og eksperimenter. Det giver bedre
-        versionsstyring, tydeligere retning og en mere ærlig forbindelse mellem tekst og
-        faktisk udvikling.
+        Fokus er at gøre de eksisterende spor mere tydelige, mere troværdige og lettere at forstå:
+        hvad findes, hvad kan prøves, hvad mangler, og hvorfor er projektet bygget på den måde?
       </p>
     </div>
   </section>
 
   <section class="section">
-    <div class="reading">
-      <h2>Infrastruktur</h2>
-
-      <p>
-        Innosocia kører i et lille hjemmelab-setup med fokus på enkelhed, kontrol og
-        lang levetid.
-      </p>
-
-      <ul>
-        <li>Raspberry Pi som edge node og personlig platform</li>
-        <li>Beelink mini-server til apps og udvikling</li>
-        <li>Docker-baserede services og filbaseret drift hvor det giver mening</li>
-        <li>Nextcloud som del af den personlige og suveræne infrastruktur</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="reading">
-      <h2>Ideer der fylder lige nu</h2>
-
-      <ul>
-        <li>Local-first software som praktisk princip, ikke bare teori</li>
-        <li>Små robuste systemer frem for oppustede platforme</li>
-        <li>Digital suverænitet i hverdagen, ikke kun i debatindlæg</li>
-        <li>Software der styrker dømmekraft i stedet for at erstatte den</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="reading">
-      <h2>Status</h2>
-
-      <p>
-        Innosocia er stadig under opbygning, men retningen er langt tydeligere nu end i
-        begyndelsen: et lille økosystem af apps, tekster og projekter med fælles principper.
-      </p>
-
-      <p class="muted">
-        Sidst opdateret: marts 2026
-      </p>
+    <div class="wrapper">
+      <div class="card">
+        <h2>Seneste konkrete ændringer</h2>
+        <p class="muted">
+          Konkrete opdateringer, deploy-status og ændringer på sitet samles på statussiden.
+        </p>
+        <p>
+          <a href="/status/">Gå til status →</a>
+        </p>
+      </div>
     </div>
   </section>
 </BaseLayout>
