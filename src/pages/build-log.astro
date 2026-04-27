@@ -4,64 +4,82 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Build log | Innosocia"
-  description="Løbende udviklingsnoter og status for Innosocia."
+  description="Historiske udviklingsnoter for Innosocia og tidligere ændringer på sitet."
 >
   <section class="hero">
     <div class="wrapper">
       <p class="eyebrow">Build log</p>
-      <h1>Udviklingen af Innosocia i små, konkrete skridt</h1>
+      <h1>Udviklingshistorik for Innosocia</h1>
       <p class="muted" style="max-width: 62ch;">
-        Her samles korte noter om ændringer, forbedringer og nye spor i sitet og de
-        tilhørende apps. Ikke store løfter. Bare faktisk arbejde.
+        Build loggen samler historiske udviklingsnoter fra opbygningen af sitet.
+        Den er ikke den primære side for seneste ændringer.
+      </p>
+      <p>
+        <a class="button primary" href="/status/">Se seneste ændringer</a>
       </p>
     </div>
   </section>
 
   <section class="section">
-    <div class="reading">
+    <div class="wrapper">
+      <div class="card">
+        <h2>Hvad denne side bruges til</h2>
+        <p class="muted">
+          Denne side viser tidligere udviklingsskridt og større ændringer i opbygningen af Innosocia.
+          Nye, korte statusopdateringer samles på statussiden, så besøgende ikke skal gætte, hvilken side der er mest aktuel.
+        </p>
+        <p>
+          <a href="/status/">Gå til status →</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <h2>15. marts 2026</h2>
+  <section class="section">
+    <div class="reading">
+      <h2>Historiske noter</h2>
+
+      <h3>15. marts 2026</h3>
       <p><strong>Forsiden fik et tydeligere software-præg.</strong></p>
       <p>
         Hero-sektionen blev udvidet med levende baggrund og et systemkort, så Innosocia
-        i højere grad fremstår som et sammenhængende økosystem og ikke bare en teksttung forside.
+        i højere grad fremstod som et sammenhængende økosystem og ikke bare en teksttung forside.
       </p>
 
-      <h2>15. marts 2026</h2>
+      <h3>15. marts 2026</h3>
       <p><strong>Mobiltypografien blev gjort markant mere læsbar.</strong></p>
       <p>
-        Fontvægt, kontrast og spacing blev justeret, så sitet faktisk kan læses på mobil
-        uden at teksten ligner et halvt forsvundet design-eksperiment.
+        Fontvægt, kontrast og spacing blev justeret, så sitet kunne læses bedre på mobil
+        uden at teksten lignede et halvt forsvundet design-eksperiment.
       </p>
 
-      <h2>14. marts 2026</h2>
+      <h3>14. marts 2026</h3>
       <p><strong>App-siderne blev styrket med mere struktur.</strong></p>
       <p>
         App-siderne fik tydeligere sektioner for formål, problem, retning og relaterede apps,
-        så de i højere grad fungerer som produkt- og systembeskrivelser.
+        så de i højere grad fungerede som produkt- og systembeskrivelser.
       </p>
 
-      <h2>14. marts 2026</h2>
+      <h3>14. marts 2026</h3>
       <p><strong>Metadata og social deling kom på plads.</strong></p>
       <p>
         Sitet blev udvidet med favicon, social preview, Open Graph-metadata og grundlæggende
-        SEO-forbedringer, så deling og indeksering fungerer mere ordentligt.
+        SEO-forbedringer, så deling og indeksering fungerede mere ordentligt.
       </p>
 
-      <h2>13. marts 2026</h2>
+      <h3>13. marts 2026</h3>
       <p><strong>Repo-links og delingsfunktioner blev tilføjet.</strong></p>
       <p>
-        App-siderne linker nu tydeligere til GitHub, og sitet fik en enkel delingskomponent,
-        så forbindelsen mellem kode og præsentation er mere synlig.
+        App-siderne linkede tydeligere til GitHub, og sitet fik en enkel delingskomponent,
+        så forbindelsen mellem kode og præsentation blev mere synlig.
       </p>
 
-      <h2>12. marts 2026</h2>
+      <h3>12. marts 2026</h3>
       <p><strong>Innosocia.dk blev samlet som første offentlige version.</strong></p>
       <p>
         Den første fungerende Astro-version af sitet blev struktureret med apps, idéer,
         projekter, principper, om, kontakt og nu-side.
       </p>
-
     </div>
   </section>
 </BaseLayout>
