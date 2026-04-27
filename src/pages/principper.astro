@@ -4,123 +4,221 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Principper | Innosocia"
-  description="De principper der styrer udviklingen af apps, idéer og projekter i Innosocia."
+  description="Principperne bag Innosocia: local-first, forklarbar logik, rolig teknologi, lav afhængighed og respekt for brugeren."
 >
-
   <section class="hero">
     <div class="wrapper">
       <p class="eyebrow">Principper</p>
-      <h1>Fem principper for roligere og mere robuste digitale systemer</h1>
+      <h1>Principper for digitale systemer, der er til at forstå og leve med</h1>
 
-      <p class="muted" style="max-width:60ch;">
-        Innosocia bygger ikke bare software. Det bygger software efter nogle
-        ret enkle, men ofte oversete principper.
+      <p class="muted" style="max-width: 62ch;">
+        Innosocia bygger på nogle få principper, som skal gøre digitale værktøjer mere robuste,
+        mere forklarlige og mindre afhængige af platforme, der helst vil eje både data og opmærksomhed.
       </p>
 
-      <p class="muted" style="max-width:60ch;">
-        De er ikke revolutionerende. De er bare konsekvente.
+      <p class="muted" style="max-width: 62ch;">
+        Principperne er ikke pynt. De er arbejdsregler for, hvordan apps, projekter og samarbejder bør bygges.
       </p>
     </div>
   </section>
 
   <section class="section">
-    <div class="reading">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Kort fortalt</h2>
+        <p class="muted">
+          Hvis Innosocia skal reduceres til fem krav, er det disse.
+        </p>
+      </div>
 
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Local-first</h3>
+          <p class="muted">
+            Data og funktionalitet skal så tæt på brugeren som muligt.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Forklarbar logik</h3>
+          <p class="muted">
+            Systemer skal kunne begrundes, ikke bare imponere.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Rolig teknologi</h3>
+          <p class="muted">
+            Mindre støj. Mere støtte til det, brugeren faktisk prøver at gøre.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Lav afhængighed</h3>
+          <p class="muted">
+            Færre låste platforme, færre skjulte bindinger og mere flytbarhed.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Respekt for brugeren</h3>
+          <p class="muted">
+            Brugeren er ikke råstof for engagement, datahøst eller abonnementstænkning.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Praktisk dømmekraft</h3>
+          <p class="muted">
+            Teknologi skal understøtte menneskers vurderinger, ikke erstatte dem med sort boks-logik.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="reading">
       <h2>1. Local-first</h2>
 
       <p>
-        Data og funktionalitet bør så vidt muligt ligge tæt på brugeren.
+        Data og funktionalitet bør så vidt muligt ligge tæt på brugeren. Et værktøj bør ikke være unødigt afhængigt
+        af en fjern platform for at kunne udføre sine basale funktioner.
       </p>
 
       <p>
-        Software bør kunne fungere uden konstant netforbindelse, uden
-        centraliserede platforme og uden at gøre brugeren afhængig af
-        eksterne tjenester for basale funktioner.
+        Local-first betyder ikke, at netværk, deling eller synkronisering er forbudt. Det betyder, at systemet først
+        skal være brugbart og forståeligt lokalt, før det kobles på større infrastrukturer.
       </p>
 
-      <p>
-        Local-first betyder ikke “ingen netværk”. Det betyder, at systemer
-        først og fremmest fungerer lokalt og derefter kan synkronisere,
-        dele eller samarbejde.
-      </p>
+      <h3>Det betyder i praksis</h3>
+
+      <ul>
+        <li>data bør kunne forstås og flyttes</li>
+        <li>basal funktionalitet bør ikke kræve unødige tredjepartssystemer</li>
+        <li>brugeren skal have mere kontrol over historik, filer og opsætning</li>
+      </ul>
 
       <hr />
 
       <h2>2. Forklarbar logik</h2>
 
       <p>
-        Brugere bør kunne forstå de systemer, de arbejder med.
+        Brugere bør kunne forstå de systemer, de arbejder med. Beslutningslogik, progression, anbefalinger og
+        beregninger bør være læsbare og begrundelige.
       </p>
 
       <p>
-        Beslutningslogik, progression, beregninger og struktur bør være
-        læsbare og begrundelige – ikke skjulte i uigennemsigtige algoritmer
-        eller marketingvenlige “AI-features”.
+        Det gælder især systemer, der påvirker menneskers valg. Hvis en app anbefaler, justerer, prioriterer eller
+        skjuler noget, bør den kunne forklare hvorfor.
       </p>
 
-      <p>
-        Hvis et system påvirker menneskers beslutninger, bør det også
-        kunne forklares.
-      </p>
+      <h3>Det betyder i praksis</h3>
+
+      <ul>
+        <li>ingen skjulte anbefalinger forklædt som neutral systemlogik</li>
+        <li>ingen “AI siger det”-argumenter uden begrundelse</li>
+        <li>beslutninger og forslag skal kunne efterprøves af mennesker</li>
+      </ul>
 
       <hr />
 
       <h2>3. Rolig teknologi</h2>
 
       <p>
-        Software bør støtte menneskers opmærksomhed – ikke kapre den.
+        Software bør støtte menneskers opmærksomhed, ikke kapre den. Mange digitale produkter er bygget til at
+        øge engagement, notifikationer og tidsforbrug, selv når det ikke hjælper brugeren.
       </p>
 
       <p>
-        Mange digitale produkter er designet til at maksimere engagement,
-        notifikationer og tidsforbrug. Det skaber støj og fragmenteret
-        opmærksomhed.
+        Rolig teknologi forsøger det modsatte: værktøjer der hjælper brugeren med at gøre det, de kom for,
+        og derefter træder i baggrunden.
       </p>
 
-      <p>
-        Rolig teknologi forsøger det modsatte: værktøjer der hjælper
-        mennesker med at gøre det, de kom for, og derefter forsvinder igen.
-      </p>
+      <h3>Det betyder i praksis</h3>
+
+      <ul>
+        <li>færre forstyrrelser og færre falske hastesager</li>
+        <li>tydeligere informationshierarki</li>
+        <li>design der hjælper brugeren videre i stedet for at holde brugeren fanget</li>
+      </ul>
 
       <hr />
 
-      <h2>4. Få afhængigheder</h2>
+      <h2>4. Lav afhængighed</h2>
 
       <p>
-        Jo flere platforme, tjenester og biblioteker et system afhænger af,
-        desto mere skrøbeligt bliver det.
+        Jo flere platforme, tjenester og biblioteker et system afhænger af, desto mere skrøbeligt bliver det.
+        Afhængigheder kan være nyttige, men de skal være bevidste.
       </p>
 
       <p>
-        Innosocia forsøger at bygge systemer med så få eksterne afhængigheder
-        som muligt: simple arkitekturer, læsbar kode og værktøjer der kan
-        vedligeholdes over lang tid.
+        Innosocia forsøger at bygge med enkle arkitekturer, læsbar kode og løsninger, der kan vedligeholdes over tid.
       </p>
 
-      <p>
-        Robusthed kommer ofte fra enkelhed.
-      </p>
+      <h3>Det betyder i praksis</h3>
+
+      <ul>
+        <li>undgå unødvendig platformslåsning</li>
+        <li>foretræk åbne formater og simple strukturer</li>
+        <li>vælg teknologi, der kan forklares, flyttes og vedligeholdes</li>
+      </ul>
 
       <hr />
 
       <h2>5. Respekt for brugeren</h2>
 
       <p>
-        Brugere er ikke dataproducenter eller engagement-mål.
+        Brugere er ikke dataproducenter, engagement-mål eller passive modtagere af systemlogik.
+        Software bør respektere menneskers tid, opmærksomhed og ejerskab over egne data.
       </p>
 
       <p>
-        Software bør respektere menneskers tid, opmærksomhed og ejerskab
-        over deres egne data.
+        Et godt system hjælper brugeren med at tænke og handle bedre. Det bør ikke gøre brugeren mere afhængig,
+        mere forvirret eller mere optaget af systemet end af opgaven.
       </p>
 
-      <p>
-        Det betyder blandt andet færre manipulative designmønstre,
-        tydeligere systemer og værktøjer der hjælper mennesker med
-        at tænke og handle – ikke bare klikke.
-      </p>
+      <h3>Det betyder i praksis</h3>
 
+      <ul>
+        <li>ingen manipulative designmønstre</li>
+        <li>ingen unødig dataindsamling</li>
+        <li>ingen funktioner der primært findes for at fastholde brugeren</li>
+      </ul>
     </div>
   </section>
 
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <h2>Hvordan principperne bruges</h2>
+        <p class="muted">
+          Principperne skal kunne ses i de konkrete dele af Innosocia.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3><a href="/apps/">Apps</a></h3>
+          <p class="muted">
+            Apps skal være forklarbare, rolige og ærlige om status, data og begrænsninger.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3><a href="/samarbejde/">Samarbejde</a></h3>
+          <p class="muted">
+            Samarbejder skal tage afsæt i konkrete problemer, ikke teknologisk pynt eller strategisk tåge.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3><a href="/status/">Status</a></h3>
+          <p class="muted">
+            Status skal vise, hvad der faktisk ændrer sig, ikke bare at noget teknisk blev deployet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
