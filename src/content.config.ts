@@ -19,6 +19,12 @@ const apps = defineCollection({
 
     repoUrl: z.string().url().optional(),
     license: z.string().optional(),
+    availabilityLabel: z.string().optional(),
+    availabilityText: z.string().optional(),
+    primaryUrl: z.string().url().optional(),
+    primaryActionLabel: z.string().optional(),
+    downloadStatus: z.string().optional(),
+    nextStep: z.string().optional(),
     screenshots: z.array(z.object({
       src: z.string(),
       alt: z.string(),

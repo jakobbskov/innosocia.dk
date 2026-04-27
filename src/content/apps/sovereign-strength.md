@@ -27,6 +27,13 @@ relatedApps:
 repoUrl: "https://github.com/jakobbskov/sovereign-strength"
 license: "MIT"
 
+availabilityLabel: "Kan prøves nu"
+availabilityText: "Sovereign Strength kan prøves som beta på strength.innosocia.dk."
+primaryUrl: "https://strength.innosocia.dk/"
+primaryActionLabel: "Prøv betaen"
+downloadStatus: "Der er ikke frigivet en offentlig APK eller app-build endnu."
+nextStep: "Næste skridt er at gøre status, programmer og brugerflow endnu tydeligere."
+
 screenshots:
   - src: "/images/apps/sovereign-strength/overview-history.png"
     alt: "Historik og ugentlig rytme i Sovereign Strength"
