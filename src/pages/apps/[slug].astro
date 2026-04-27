@@ -58,6 +58,49 @@ const pageImage = "https://innosocia.dk/social-preview-default.png";
     </div>
   </section>
 
+  {(app.data.availabilityText || app.data.downloadStatus || app.data.nextStep || app.data.primaryUrl) && (
+    <section class="section">
+      <div class="wrapper">
+        <div class="section-head">
+          <h2>Kort status</h2>
+          <p class="muted">
+            Hvad kan man gøre med appen lige nu?
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          {app.data.availabilityText && (
+            <div class="card">
+              <h3>{app.data.availabilityLabel || "Status"}</h3>
+              <p class="muted">{app.data.availabilityText}</p>
+              {app.data.primaryUrl && (
+                <p>
+                  <a href={app.data.primaryUrl} target="_blank" rel="noopener noreferrer">
+                    {app.data.primaryActionLabel || "Åbn app"}
+                  </a>
+                </p>
+              )}
+            </div>
+          )}
+
+          {app.data.downloadStatus && (
+            <div class="card">
+              <h3>Download</h3>
+              <p class="muted">{app.data.downloadStatus}</p>
+            </div>
+          )}
+
+          {app.data.nextStep && (
+            <div class="card">
+              <h3>Næste skridt</h3>
+              <p class="muted">{app.data.nextStep}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+
   {app.data.screenshots?.length > 0 && (
     <section class="section">
       <div class="wrapper">
