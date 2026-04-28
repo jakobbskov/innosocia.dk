@@ -1799,3 +1799,33 @@ button:focus-visible,
 }
 
 
+
+/* -------------------------------- */
+/* Contact page compact layout       */
+/* -------------------------------- */
+
+.contact-hero {
+  padding-bottom: 1.5rem;
+}
+
+.contact-section {
+  padding: 2rem 0;
+}
+
+.contact-section + .contact-section {
+  padding-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding-bottom: 1rem;
+  }
+
+  .contact-section {
+    padding: 1.5rem 0;
+  }
+
+  .contact-section + .contact-section {
+    padding-top: 0.4rem;
+  }
+}
