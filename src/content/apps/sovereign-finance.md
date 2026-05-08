@@ -25,12 +25,14 @@ relatedApps:
   - "sovereign-planta"
 
 repoUrl: "https://github.com/jakobbskov/sovereign-finance"
+primaryUrl: "https://finance.innosocia.dk/"
+primaryActionLabel: "Åbn Sovereign Finance"
 license: "MIT"
 
-availabilityLabel: "Ikke offentligt prøvbar endnu"
-availabilityText: "Sovereign Finance er et prototype- og konceptspor. Der er ikke en offentlig demo endnu."
-downloadStatus: "Der er ikke frigivet en offentlig build eller download endnu."
-nextStep: "Næste skridt er at afklare første brugbare prototype og vise tydeligere, hvad appen skal kunne."
+availabilityLabel: "Kræver adgang"
+availabilityText: "Sovereign Finance er en auth-beskyttet prototype. Appen kan åbnes via platformen, men kræver adgang."
+downloadStatus: "Der er ikke frigivet en offentlig build eller download. Den aktuelle version kører som selvhostet webapp."
+nextStep: "Næste skridt er at styrke platform-navigation, auth-flow og tydelig forklaring af appens beslutninger."
 dataPrivacyTitle: "Data og privatliv"
 dataPrivacyText: "Sovereign Finance bygger på samme retning som resten af Sovereign-apps: økonomidata skal være forståelige, flytbare og så lidt afhængige af eksterne platforme som muligt."
 dataPrivacyPoints:
